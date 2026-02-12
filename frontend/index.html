@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dispensary Hub Admin UI</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="brand-dot"></span>
+          <div>
+            <h1>Dispensary Hub</h1>
+            <p>Staff ERP</p>
+          </div>
+        </div>
+        <nav>
+          <button class="nav-link active" data-page="members">Members</button>
+          <button class="nav-link" data-page="suppliers">Suppliers</button>
+          <button class="nav-link" data-page="products">Products & Stock</button>
+          <button class="nav-link" data-page="receive">Receive Stock</button>
+          <button class="nav-link" data-page="dispense">New Order / Dispense</button>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <header class="topbar">
+          <h2 id="page-title">Members</h2>
+          <div class="topbar-actions">
+            <input type="search" placeholder="Quick search..." />
+            <button class="primary">+ Quick Add</button>
+          </div>
+        </header>
+
+        <section class="page active" id="members">
+          <div class="panel-grid two-col">
+            <article class="panel">
+              <div class="panel-head">
+                <h3>Members list</h3>
+                <input id="member-search" type="search" placeholder="Search by name, ID or phone" />
+              </div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Member</th>
+                    <th>Status</th>
+                    <th>Tier</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="member-table"></tbody>
+              </table>
+            </article>
+
+            <article class="panel">
+              <div class="panel-head">
+                <h3>Member profile</h3>
+                <span class="badge success" id="profile-status">VERIFIED</span>
+              </div>
+              <div class="profile" id="profile-card"></div>
+              <div class="actions">
+                <button id="open-verify" class="warning">Verify / Update KYC</button>
+                <button>View history</button>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="page" id="suppliers">
+          <div class="panel-grid two-col">
+            <article class="panel">
+              <div class="panel-head"><h3>Suppliers list</h3></div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Contact</th>
+                    <th>Lead time</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>Green Valley Co-op</td><td>Nomsa Mokoena · +27 82 200 1111</td><td>2 days</td><td><span class="badge success">Active</span></td></tr>
+                  <tr><td>Highland Botanicals</td><td>Liam Jacobs · +27 73 554 1020</td><td>4 days</td><td><span class="badge">Pending</span></td></tr>
+                  <tr><td>Urban Cultivars</td><td>Tariq Khan · +27 61 903 9900</td><td>1 day</td><td><span class="badge success">Active</span></td></tr>
+                </tbody>
+              </table>
+            </article>
+
+            <article class="panel">
+              <div class="panel-head"><h3>Supplier form</h3></div>
+              <form class="form-grid">
+                <label>Supplier name<input type="text" placeholder="e.g. Green Valley Co-op" /></label>
+                <label>Reg no.<input type="text" placeholder="2024/123456/07" /></label>
+                <label>Primary contact<input type="text" placeholder="Full name" /></label>
+                <label>Phone<input type="tel" placeholder="+27" /></label>
+                <label>Email<input type="email" placeholder="ops@supplier.co.za" /></label>
+                <label>Lead time (days)<input type="number" min="0" value="2" /></label>
+                <label class="full">Address<textarea rows="3" placeholder="Street, city, province"></textarea></label>
+                <div class="actions full">
+                  <button type="button">Save draft</button>
+                  <button type="button" class="primary">Create supplier</button>
+                </div>
+              </form>
+            </article>
+          </div>
+        </section>
+
+        <section class="page" id="products">
+          <div class="stats-grid">
+            <article class="stat"><p>Total SKUs</p><h3>148</h3></article>
+            <article class="stat"><p>Low stock alerts</p><h3>9</h3></article>
+            <article class="stat"><p>Out of stock</p><h3>2</h3></article>
+            <article class="stat"><p>Dispensed today</p><h3>37 units</h3></article>
+          </div>
+          <article class="panel">
+            <div class="panel-head"><h3>Products + stock on hand</h3></div>
+            <table>
+              <thead>
+                <tr>
+                  <th>SKU</th>
+                  <th>Product</th>
+                  <th>Category</th>
+                  <th>Stock on hand</th>
+                  <th>Reorder level</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>FLR-001</td><td>Indica Flower 10g</td><td>Flower</td><td>84</td><td>30</td></tr>
+                <tr><td>OIL-014</td><td>CBD Oil 30ml</td><td>Oil</td><td>12</td><td>20</td></tr>
+                <tr><td>EDB-007</td><td>Berry Gummies 20pk</td><td>Edibles</td><td>0</td><td>15</td></tr>
+                <tr><td>VPE-003</td><td>Sativa Vape Cart</td><td>Vapes</td><td>45</td><td>25</td></tr>
+              </tbody>
+            </table>
+          </article>
+        </section>
+
+        <section class="page" id="receive">
+          <article class="panel narrow">
+            <div class="panel-head"><h3>Receive stock (GRN-lite)</h3></div>
+            <form class="form-grid">
+              <label>GRN reference<input type="text" value="GRN-2026-0021" /></label>
+              <label>Supplier<select><option>Green Valley Co-op</option><option>Urban Cultivars</option></select></label>
+              <label>Delivery date<input type="date" /></label>
+              <label>Received by<input type="text" value="Staff: S. Naidoo" /></label>
+              <label>Product SKU<input type="text" placeholder="FLR-001" /></label>
+              <label>Batch / lot<input type="text" placeholder="LOT-77882" /></label>
+              <label>Qty received<input type="number" value="50" /></label>
+              <label>Unit cost (ZAR)<input type="number" value="85" /></label>
+              <label class="full">Notes<textarea rows="3" placeholder="Condition, variances, remarks"></textarea></label>
+              <div class="actions full">
+                <button type="button">Save as draft</button>
+                <button type="button" class="primary">Post RECEIVE movement</button>
+              </div>
+            </form>
+          </article>
+        </section>
+
+        <section class="page" id="dispense">
+          <article class="panel">
+            <div class="panel-head"><h3>New order / dispense flow</h3></div>
+            <ol class="stepper">
+              <li><strong>1. Select member:</strong> Search member and confirm KYC is <span class="badge success">VERIFIED</span>.</li>
+              <li><strong>2. Add items:</strong> Choose products and quantity from available stock.</li>
+              <li><strong>3. Review order:</strong> Apply discounts and verify compliance notes.</li>
+              <li><strong>4. Capture payment:</strong> Record method and amount tendered.</li>
+              <li><strong>5. Complete dispense:</strong> Commit <code>DISPENSE</code> inventory movement and print receipt.</li>
+            </ol>
+            <div class="panel-grid two-col">
+              <div class="subpanel">
+                <h4>Current basket</h4>
+                <p>Member: <strong>K. Dlamini (M-1002)</strong></p>
+                <p>Items: 2 · Subtotal: R640.00</p>
+                <p>Payment: Card</p>
+              </div>
+              <div class="subpanel">
+                <h4>Validation checklist</h4>
+                <ul>
+                  <li>✅ Member status verified</li>
+                  <li>✅ Stock available for all items</li>
+                  <li>⚠️ Signature pending</li>
+                </ul>
+              </div>
+            </div>
+            <div class="actions">
+              <button>Save order</button>
+              <button class="primary">Complete dispense</button>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <dialog id="verify-modal">
+      <form method="dialog" class="modal-card">
+        <h3>Verify member (Manual KYC)</h3>
+        <p>Record in-person verification outcome.</p>
+        <label>Outcome
+          <select>
+            <option>VERIFIED</option>
+            <option>REJECTED</option>
+            <option>PENDING_REVIEW</option>
+          </select>
+        </label>
+        <label>Verified by
+          <input type="text" value="Staff: S. Naidoo" />
+        </label>
+        <label>Notes
+          <textarea rows="3" placeholder="ID checked, proof of address, comments"></textarea>
+        </label>
+        <div class="actions">
+          <button value="cancel">Cancel</button>
+          <button class="primary" value="default">Save verification</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="app.js"></script>
+  </body>
+</html>
