@@ -7,22 +7,22 @@ const VALUE_PROPS = [
   {
     icon: Layers,
     title: "One system, not five",
-    description: "Sales, inventory, customers, suppliers, and reporting in a single dashboard.",
+    description: "Everything you need in one app — no more juggling notebooks and spreadsheets.",
   },
   {
     icon: ShieldCheck,
     title: "Compliance built in",
-    description: "An immutable audit trail and full batch traceability, not bolted on after the fact.",
+    description: "We keep track of everything automatically, so you're always ready if someone checks your records.",
   },
   {
     icon: LineChart,
-    title: "Owner-level visibility",
-    description: "Real KPIs and reports so you always know how the business is actually doing.",
+    title: "See how your store is doing",
+    description: "Clear numbers on sales and stock — no spreadsheets, no guessing.",
   },
   {
     icon: Building2,
-    title: "Built to scale with you",
-    description: "From a single counter to multi-store operations, with role-based access throughout.",
+    title: "Grows with you",
+    description: "Works for one store or many, with the right access for every staff member.",
   },
 ];
 

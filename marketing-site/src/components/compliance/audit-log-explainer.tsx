@@ -7,17 +7,17 @@ const POINTS = [
     icon: FileClock,
     title: "Every action, timestamped",
     description:
-      "Sales, inventory movements, and record changes are logged the moment they happen.",
+      "Sales, stock changes, and other actions are saved the moment they happen.",
   },
   {
     icon: UserCheck,
-    title: "Attributed to a staff member",
-    description: "Every entry is tied to the staff user who performed the action.",
+    title: "Linked to the staff member who did it",
+    description: "You can always see which staff member made each change.",
   },
   {
     icon: Lock,
-    title: "Immutable by design",
-    description: "Audit records can't be edited or deleted — only appended to.",
+    title: "Nothing can be changed",
+    description: "Once something is recorded, it can't be edited or deleted.",
   },
 ];
 

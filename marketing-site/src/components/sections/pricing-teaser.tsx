@@ -14,7 +14,7 @@ function PricingTeaser() {
         <SectionHeading
           eyebrow="Pricing"
           title="Simple, transparent plans"
-          description="Pick the tier that matches how many stores you run. Switch anytime."
+          description="Pick the plan that matches how many stores you run. Switch anytime. Every plan starts with a free demo."
           align="center"
           className="mx-auto"
         />

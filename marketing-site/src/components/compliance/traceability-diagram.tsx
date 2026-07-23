@@ -11,9 +11,9 @@ import {
 const CHAIN = [
   { icon: Truck, label: "Supplier", description: "Verified supplier record" },
   { icon: FileText, label: "Purchase", description: "Purchase order & invoice" },
-  { icon: Warehouse, label: "Store", description: "Batch received into inventory" },
-  { icon: ShoppingCart, label: "Sale", description: "Sale linked to the batch" },
-  { icon: User, label: "Customer", description: "Customer record on file" },
+  { icon: Warehouse, label: "Store", description: "Delivered and added to your stock" },
+  { icon: ShoppingCart, label: "Sale", description: "Recorded as a sale" },
+  { icon: User, label: "Customer", description: "Added to their profile" },
 ];
 
 function TraceabilityDiagram() {

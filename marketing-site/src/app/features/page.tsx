@@ -10,7 +10,7 @@ import { ROADMAP_ITEMS } from "@/lib/constants/roadmap";
 export const metadata: Metadata = {
   title: "Features",
   description:
-    "Explore the full LeafLedger feature catalog — point of sale, inventory, customers, suppliers, reporting, compliance, and access control.",
+    "Everything LeafLedger does — sales, stock, customers, suppliers, reports, compliance, and staff access, all in one place.",
 };
 
 export default function FeaturesPage() {
@@ -19,9 +19,9 @@ export default function FeaturesPage() {
       <section className="py-16 sm:py-20">
         <Container>
           <SectionHeading
-            eyebrow="Product"
+            eyebrow="Features"
             title="Everything your store needs, in one platform"
-            description="Eight connected areas covering the full day-to-day of running a regulated retail business."
+            description="Eight areas that cover everything you do in your store, every day."
             align="center"
             className="mx-auto"
           />

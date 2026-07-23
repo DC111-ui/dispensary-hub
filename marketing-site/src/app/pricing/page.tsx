@@ -10,7 +10,7 @@ import { PRICING_TIERS } from "@/lib/constants/pricing";
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "Simple, transparent LeafLedger pricing for regulated retailers — from a single store to a multi-store enterprise operation.",
+    "Simple, transparent LeafLedger pricing — from a single store to a chain with many branches. Every plan starts with a free demo.",
 };
 
 export default function PricingPage() {
@@ -21,7 +21,7 @@ export default function PricingPage() {
           <SectionHeading
             eyebrow="Pricing"
             title="Plans that grow with your store count"
-            description="Every plan includes the core platform. Higher tiers unlock more stores and deeper compliance features."
+            description="Every plan includes the full platform. Bigger plans support more stores and extra features. Every plan starts with a free demo."
             align="center"
             className="mx-auto"
           />

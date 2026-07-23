@@ -22,7 +22,7 @@ export const PRICING_TIERS: PricingTier[] = [
       "Inventory & batch tracking",
       "Products & catalog",
       "Basic reporting",
-      "Audit log",
+      "Full activity records",
     ],
     ctaLabel: "Get started",
     emphasized: false,
@@ -32,14 +32,14 @@ export const PRICING_TIERS: PricingTier[] = [
     name: "Growth",
     price: "R1,499",
     billingNote: "/month",
-    description: "For a growing store that needs loyalty and insight.",
+    description: "For a growing store that wants loyalty rewards and better reports.",
     features: [
       "Up to 2 stores",
       "Everything in Starter",
       "Customers & loyalty",
       "Suppliers & purchasing",
       "Full reporting suite",
-      "Role-based access",
+      "Different access for each staff member",
     ],
     ctaLabel: "Get started",
     emphasized: false,
@@ -49,11 +49,11 @@ export const PRICING_TIERS: PricingTier[] = [
     name: "Professional",
     price: "R2,999",
     billingNote: "/month",
-    description: "For multi-store operators who need full traceability.",
+    description: "For stores with a few branches that want full tracking of every product.",
     features: [
       "Up to 5 stores",
       "Everything in Growth",
-      "Full batch traceability chain",
+      "Full tracking, from supplier to sale",
       "Compliance Officer role",
       "Priority support",
     ],
@@ -65,13 +65,13 @@ export const PRICING_TIERS: PricingTier[] = [
     name: "Enterprise",
     price: "Custom",
     billingNote: "",
-    description: "For larger operators with custom requirements.",
+    description: "For larger businesses with their own needs.",
     features: [
       "Unlimited stores",
       "Everything in Professional",
       "Custom onboarding & data migration",
       "Dedicated account manager",
-      "Custom SLAs",
+      "A support plan built around you",
     ],
     ctaLabel: "Talk to us",
     emphasized: false,
@@ -87,7 +87,7 @@ export type Addon = {
 export const ADDONS: Addon[] = [
   { id: "extra-store", name: "Additional store", description: "Add another branch to any plan." },
   { id: "extra-staff", name: "Additional staff seats", description: "For teams that outgrow their plan's included seats." },
-  { id: "data-migration", name: "Data migration", description: "White-glove import of your existing product and customer data." },
+  { id: "data-migration", name: "Data migration", description: "We move your existing product and customer data over for you." },
   { id: "onboarding", name: "Priority onboarding", description: "A guided setup session with our team." },
 ];
 
@@ -102,7 +102,7 @@ export const PRICING_FAQ: PricingFaqItem[] = [
     id: "trial",
     question: "Is there a free trial?",
     answer:
-      "We're onboarding early customers directly — book a demo and we'll walk you through getting started, including trial options for your store.",
+      "The demo is free, and we'll walk you through everything ourselves. We'll also talk about trial options for your store.",
   },
   {
     id: "switch-plans",
@@ -113,7 +113,7 @@ export const PRICING_FAQ: PricingFaqItem[] = [
   {
     id: "contracts",
     question: "Are there long-term contracts?",
-    answer: "No long-term lock-in is required — plans are billed monthly.",
+    answer: "No long contracts. You pay monthly and can stop anytime.",
   },
   {
     id: "data-ownership",

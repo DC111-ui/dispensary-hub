@@ -6,7 +6,7 @@ import { ContactForm } from "@/components/contact/contact-form";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Book a demo or get in touch with the LeafLedger team.",
+  description: "Book your free demo or get in touch with the LeafLedger team.",
 };
 
 export default async function ContactPage({
@@ -22,8 +22,8 @@ export default async function ContactPage({
       <Container className="mx-auto max-w-2xl">
         <SectionHeading
           eyebrow="Contact"
-          title="Book a demo"
-          description="Tell us about your store and we'll set up a walkthrough tailored to your operation."
+          title="Book your free demo"
+          description="Tell us a little about your store. We'll set up a free walkthrough made just for you — no cost, no obligation."
           align="center"
           className="mx-auto mb-10"
         />

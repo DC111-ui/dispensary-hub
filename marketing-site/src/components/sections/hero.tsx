@@ -6,9 +6,9 @@ import { Container } from "@/components/shared/container";
 
 const HERO_TILES = [
   { icon: Store, label: "Point of Sale" },
-  { icon: Boxes, label: "Batch Inventory" },
+  { icon: Boxes, label: "Stock Tracking" },
   { icon: Users, label: "Customers & Loyalty" },
-  { icon: ShieldCheck, label: "Compliance & Audit" },
+  { icon: ShieldCheck, label: "Records & Inspections" },
 ];
 
 function Hero() {
@@ -21,26 +21,29 @@ function Hero() {
             Now onboarding early customers
           </span>
           <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
-            The cloud platform for regulated retailers.
+            Run your whole store from one place.
           </h1>
           <p className="text-muted-foreground max-w-xl text-lg">
-            Run sales, inventory, customers, suppliers, and compliance from a single
-            dashboard — built for retailers who operate under strict record-keeping
-            and traceability requirements.
+            Sales, stock, customers, suppliers, and all your paperwork — in one
+            simple system. Everything is tracked automatically, so you&apos;re
+            always ready if someone checks your records.
           </p>
           <div className="flex flex-col gap-3 sm:flex-row">
             <Link href="/contact?plan=professional">
               <Button size="lg" className="w-full sm:w-auto">
-                Book a demo
+                Book a free demo
                 <ArrowRight className="size-4" />
               </Button>
             </Link>
             <Link href="/features">
               <Button size="lg" variant="outline" className="w-full sm:w-auto">
-                Explore features
+                See everything it does
               </Button>
             </Link>
           </div>
+          <p className="text-muted-foreground text-sm">
+            The demo is free. No cost, no obligation.
+          </p>
         </div>
 
         <div className="relative">

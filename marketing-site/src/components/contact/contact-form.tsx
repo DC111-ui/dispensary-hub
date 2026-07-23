@@ -76,8 +76,8 @@ function ContactForm({ defaultPlan }: { defaultPlan?: string }) {
         <CheckCircle2 className="text-primary size-10" />
         <h3 className="text-xl font-semibold">Thanks — we&apos;ve got it</h3>
         <p className="text-muted-foreground max-w-sm text-sm">
-          Someone from the LeafLedger team will be in touch shortly to schedule your
-          demo.
+          Someone from the LeafLedger team will be in touch shortly to schedule
+          your free demo.
         </p>
       </div>
     );
@@ -219,7 +219,7 @@ function ContactForm({ defaultPlan }: { defaultPlan?: string }) {
         ) : null}
 
         <Button type="submit" size="lg" disabled={status === "submitting"}>
-          {status === "submitting" ? "Sending..." : "Book a demo"}
+          {status === "submitting" ? "Sending..." : "Book my free demo"}
         </Button>
       </form>
     </Form>

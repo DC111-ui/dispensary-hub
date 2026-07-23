@@ -17,11 +17,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "LeafLedger — Cloud Platform for Regulated Retailers",
+    default: "LeafLedger — Run Your Whole Store From One Place",
     template: "%s | LeafLedger",
   },
   description:
-    "LeafLedger is the cloud platform for regulated retailers — a single dashboard for sales, inventory, batch traceability, and compliance.",
+    "LeafLedger is one simple system for sales, stock, customers, suppliers, and keeping your records ready for any inspection.",
 };
 
 export default function RootLayout({

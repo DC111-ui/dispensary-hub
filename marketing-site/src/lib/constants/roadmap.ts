@@ -19,7 +19,7 @@ export const ROADMAP_ITEMS: RoadmapItem[] = [
   {
     id: "online-store",
     title: "Online Store",
-    description: "A compliant storefront for browsing and reserving online.",
+    description: "A simple website where customers can browse and reserve online.",
     icon: Globe,
   },
   {
@@ -31,19 +31,19 @@ export const ROADMAP_ITEMS: RoadmapItem[] = [
   {
     id: "ai-forecasting",
     title: "AI Assistant & Forecasting",
-    description: "Demand forecasting and an assistant for day-to-day decisions.",
+    description: "An assistant that helps you decide what to restock and when.",
     icon: Sparkles,
   },
   {
     id: "smart-inventory",
     title: "Smart Inventory",
-    description: "Automated reorder points and stock-level intelligence.",
+    description: "Automatically tells you when to reorder stock.",
     icon: Boxes,
   },
   {
     id: "platform-integrations",
     title: "Platform & Integrations",
-    description: "Public API, webhooks, SDK, and accounting/payments/messaging integrations.",
+    description: "Connects with your accounting, payment, and messaging tools.",
     icon: Plug,
   },
   {

@@ -11,7 +11,7 @@ import { AuditLogExplainer } from "@/components/compliance/audit-log-explainer";
 export const metadata: Metadata = {
   title: "Compliance & Traceability",
   description:
-    "See how LeafLedger keeps regulated retailers audit-ready with a full batch traceability chain and an immutable audit log.",
+    "See how LeafLedger keeps your records ready for any inspection, automatically.",
 };
 
 export default function CompliancePage() {
@@ -21,8 +21,8 @@ export default function CompliancePage() {
         <Container>
           <SectionHeading
             eyebrow="Compliance"
-            title="Built for inspection-ready operations"
-            description="Regulated retail runs on records. LeafLedger keeps a complete, tamper-proof trail from every supplier delivery to every sale."
+            title="Built to make inspections easy"
+            description="Your business runs on paperwork and records. LeafLedger keeps track of everything automatically — from the moment stock arrives to the moment it's sold."
             align="center"
             className="mx-auto"
           />
@@ -33,12 +33,12 @@ export default function CompliancePage() {
         <Container className="flex flex-col gap-8">
           <div className="flex flex-col gap-2 text-center">
             <h2 className="text-2xl font-semibold tracking-tight">
-              The batch traceability chain
+              Where your products come from — and where they go
             </h2>
             <p className="text-muted-foreground mx-auto max-w-2xl">
-              Every batch is linked end to end, so any product on the shelf can be
-              traced back to the supplier that delivered it — and any sale can be
-              traced forward to the customer who bought it.
+              Every product is linked, start to finish. You can trace anything
+              on your shelf back to the supplier who delivered it — or trace a
+              sale forward to the customer who bought it.
             </p>
           </div>
           <TraceabilityDiagram />
@@ -48,9 +48,9 @@ export default function CompliancePage() {
       <section className="bg-secondary/30 py-16 sm:py-20">
         <Container className="flex flex-col gap-10">
           <SectionHeading
-            eyebrow="Audit log"
+            eyebrow="Records"
             title="A record you can stand behind"
-            description="Compliance isn't a report you generate once a quarter — it's built into how every action in the system is recorded."
+            description="You don't need to create reports by hand. Every action is recorded automatically, all the time."
             align="center"
             className="mx-auto"
           />
@@ -65,10 +65,11 @@ export default function CompliancePage() {
           </h2>
           <Link href="/contact">
             <Button size="lg">
-              Book a demo
+              Book a free demo
               <ArrowRight className="size-4" />
             </Button>
           </Link>
+          <p className="text-muted-foreground text-sm">No cost, no obligation.</p>
         </Container>
       </section>
     </>

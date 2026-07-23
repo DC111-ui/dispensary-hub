@@ -13,12 +13,12 @@ function FinalCta() {
             Ready to bring your store onto LeafLedger?
           </h2>
           <p className="max-w-xl text-primary-foreground/90 text-lg">
-            Book a demo and see how sales, inventory, and compliance come together
-            in one dashboard.
+            Book a free demo and see how easy it is to run your whole store in
+            one place.
           </p>
           <Link href="/contact">
             <Button size="lg" variant="secondary">
-              Book a demo
+              Book a free demo
               <ArrowRight className="size-4" />
             </Button>
           </Link>

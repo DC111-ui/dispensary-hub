@@ -16,8 +16,8 @@ function SiteFooter() {
             <span className="text-lg">LeafLedger</span>
           </Link>
           <p className="text-muted-foreground max-w-sm text-sm">
-            The cloud platform for regulated retailers — one dashboard for sales,
-            inventory, and compliance.
+            One simple place to run your store — sales, stock, and paperwork,
+            all together.
           </p>
         </div>
 

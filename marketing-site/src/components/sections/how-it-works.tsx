@@ -5,17 +5,17 @@ const STEPS = [
   {
     step: "01",
     title: "Set up your catalog",
-    description: "Bring in your products, batches, and suppliers — or start fresh.",
+    description: "Add your products, batches, and suppliers — or start fresh.",
   },
   {
     step: "02",
     title: "Sell and track in real time",
-    description: "Every sale updates inventory, customer history, and the audit log automatically.",
+    description: "Every sale updates your stock and customer records automatically.",
   },
   {
     step: "03",
-    title: "Stay audit-ready",
-    description: "Batch traceability and immutable records, always available when you need them.",
+    title: "Stay ready for inspections",
+    description: "Every batch and sale is recorded automatically, so your records are always ready when you need them.",
   },
 ];
 

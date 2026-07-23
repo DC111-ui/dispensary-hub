@@ -16,8 +16,8 @@ function FeatureHighlights() {
         <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
           <SectionHeading
             eyebrow="Everything in one place"
-            title="Built for how regulated retail actually runs"
-            description="From the counter to the back office, LeafLedger covers every part of the day-to-day."
+            title="Everything you need, in one place"
+            description="From ringing up a sale to managing your stock, LeafLedger handles it all."
           />
           <Link href="/features" className="shrink-0">
             <Button variant="outline">
