@@ -1,8 +1,21 @@
 import type { FeatureCategory } from "@/lib/constants/features";
+import { FEATURE_MOCKUPS } from "@/components/features/mockups";
 
 function FeatureVisual({ category }: { category: FeatureCategory }) {
-  const Icon = category.icon;
+  const Mockup = FEATURE_MOCKUPS[category.id];
 
+  if (Mockup) {
+    return (
+      <div>
+        <Mockup />
+        <p className="text-muted-foreground mt-3 text-center text-xs">
+          A mockup of {category.title.toLowerCase()} in LeafLedger.
+        </p>
+      </div>
+    );
+  }
+
+  const Icon = category.icon;
   return (
     <div className="border-border bg-card relative overflow-hidden rounded-2xl border p-10 shadow-sm sm:p-16">
       <div className="from-accent/60 via-background to-background pointer-events-none absolute inset-0 bg-gradient-to-br" />
