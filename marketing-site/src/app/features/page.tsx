@@ -1,0 +1,57 @@
+import type { Metadata } from "next";
+
+import { Container } from "@/components/shared/container";
+import { SectionHeading } from "@/components/shared/section-heading";
+import { FeatureCategoryDetail } from "@/components/features/feature-category-detail";
+import { RoadmapCard } from "@/components/features/roadmap-card";
+import { FEATURE_CATEGORIES } from "@/lib/constants/features";
+import { ROADMAP_ITEMS } from "@/lib/constants/roadmap";
+
+export const metadata: Metadata = {
+  title: "Features",
+  description:
+    "Explore the full LeafLedger feature catalog — point of sale, inventory, customers, suppliers, reporting, compliance, and access control.",
+};
+
+export default function FeaturesPage() {
+  return (
+    <>
+      <section className="py-16 sm:py-20">
+        <Container>
+          <SectionHeading
+            eyebrow="Product"
+            title="Everything your store needs, in one platform"
+            description="Eight connected areas covering the full day-to-day of running a regulated retail business."
+            align="center"
+            className="mx-auto"
+          />
+        </Container>
+      </section>
+
+      <section className="pb-16 sm:pb-20">
+        <Container className="flex flex-col gap-6">
+          {FEATURE_CATEGORIES.map((category) => (
+            <FeatureCategoryDetail key={category.id} category={category} />
+          ))}
+        </Container>
+      </section>
+
+      <section id="roadmap" className="bg-secondary/30 py-16 sm:py-20 scroll-mt-20">
+        <Container className="flex flex-col gap-10">
+          <SectionHeading
+            eyebrow="Roadmap"
+            title="Coming soon"
+            description="These aren't built yet — they're what we're building next. Nothing here is live in the product today."
+            align="center"
+            className="mx-auto"
+          />
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {ROADMAP_ITEMS.map((item) => (
+              <RoadmapCard key={item.id} item={item} />
+            ))}
+          </div>
+        </Container>
+      </section>
+    </>
+  );
+}
