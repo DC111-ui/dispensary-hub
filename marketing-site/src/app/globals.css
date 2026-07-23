@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
 :root {
   --radius: 0.65rem;
   --background: oklch(1 0 0);
@@ -24,28 +26,26 @@
   --ring: oklch(0.44 0.14 155);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: oklch(0.16 0.02 240);
-    --foreground: oklch(0.96 0.01 240);
-    --card: oklch(0.2 0.02 240);
-    --card-foreground: oklch(0.96 0.01 240);
-    --popover: oklch(0.2 0.02 240);
-    --popover-foreground: oklch(0.96 0.01 240);
-    --primary: oklch(0.72 0.16 155);
-    --primary-foreground: oklch(0.16 0.03 155);
-    --secondary: oklch(0.26 0.02 240);
-    --secondary-foreground: oklch(0.96 0.01 240);
-    --muted: oklch(0.26 0.02 240);
-    --muted-foreground: oklch(0.66 0.02 240);
-    --accent: oklch(0.3 0.05 155);
-    --accent-foreground: oklch(0.92 0.03 155);
-    --destructive: oklch(0.68 0.2 27);
-    --destructive-foreground: oklch(0.16 0.02 27);
-    --border: oklch(1 0 0 / 12%);
-    --input: oklch(1 0 0 / 18%);
-    --ring: oklch(0.72 0.16 155);
-  }
+[data-theme="dark"] {
+  --background: oklch(0.16 0.02 240);
+  --foreground: oklch(0.96 0.01 240);
+  --card: oklch(0.2 0.02 240);
+  --card-foreground: oklch(0.96 0.01 240);
+  --popover: oklch(0.2 0.02 240);
+  --popover-foreground: oklch(0.96 0.01 240);
+  --primary: oklch(0.72 0.16 155);
+  --primary-foreground: oklch(0.16 0.03 155);
+  --secondary: oklch(0.26 0.02 240);
+  --secondary-foreground: oklch(0.96 0.01 240);
+  --muted: oklch(0.26 0.02 240);
+  --muted-foreground: oklch(0.66 0.02 240);
+  --accent: oklch(0.3 0.05 155);
+  --accent-foreground: oklch(0.92 0.03 155);
+  --destructive: oklch(0.68 0.2 27);
+  --destructive-foreground: oklch(0.16 0.02 27);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 18%);
+  --ring: oklch(0.72 0.16 155);
 }
 
 @theme inline {
@@ -82,6 +82,7 @@
   }
   body {
     @apply bg-background text-foreground;
+    transition: background-color 0.15s ease, color 0.15s ease;
   }
 }
 

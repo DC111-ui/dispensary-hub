@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/shared/container";
 import { MobileNav } from "@/components/layout/mobile-nav";
 import { FeaturesNavMenu } from "@/components/layout/features-nav-menu";
+import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { NAV_LINKS, NAV_CTA } from "@/lib/constants/nav";
 
 function SiteHeader() {
@@ -35,6 +36,7 @@ function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <ThemeToggle />
           <Link href={NAV_CTA.href} className="hidden md:block">
             <Button>{NAV_CTA.label}</Button>
           </Link>
