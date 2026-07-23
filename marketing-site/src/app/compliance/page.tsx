@@ -7,12 +7,14 @@ import { SectionHeading } from "@/components/shared/section-heading";
 import { Button } from "@/components/ui/button";
 import { TraceabilityDiagram } from "@/components/compliance/traceability-diagram";
 import { AuditLogExplainer } from "@/components/compliance/audit-log-explainer";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Compliance & Traceability",
   description:
     "See how LeafLedger keeps your records ready for any inspection, automatically.",
-};
+  path: "/compliance",
+});
 
 export default function CompliancePage() {
   return (

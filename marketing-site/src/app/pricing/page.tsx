@@ -5,17 +5,56 @@ import { SectionHeading } from "@/components/shared/section-heading";
 import { PricingCard } from "@/components/pricing/pricing-card";
 import { AddonsList } from "@/components/pricing/addons-list";
 import { PricingFaq } from "@/components/pricing/pricing-faq";
-import { PRICING_TIERS } from "@/lib/constants/pricing";
+import { PRICING_TIERS, PRICING_FAQ } from "@/lib/constants/pricing";
+import { buildMetadata } from "@/lib/seo";
+import { SITE_NAME } from "@/lib/constants/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Pricing",
   description:
     "Simple, transparent LeafLedger pricing, from a single store to a chain with many branches. Every plan starts with a free demo.",
+  path: "/pricing",
+});
+
+const FAQ_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: PRICING_FAQ.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+
+const OFFERS_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: SITE_NAME,
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web",
+  offers: PRICING_TIERS.filter((tier) => /^R[\d,]+$/.test(tier.price)).map((tier) => ({
+    "@type": "Offer",
+    name: tier.name,
+    price: tier.price.replace(/[^0-9]/g, ""),
+    priceCurrency: "ZAR",
+    description: tier.description,
+  })),
 };
 
 export default function PricingPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_JSON_LD) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(OFFERS_JSON_LD) }}
+      />
       <section className="py-16 sm:py-20">
         <Container>
           <SectionHeading

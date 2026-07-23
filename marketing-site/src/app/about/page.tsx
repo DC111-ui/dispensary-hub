@@ -5,6 +5,7 @@ import { ArrowRight, Check, Landmark, Scale, ExternalLink } from "lucide-react";
 import { Container } from "@/components/shared/container";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { Button } from "@/components/ui/button";
+import { buildMetadata } from "@/lib/seo";
 
 const SOURCES = [
   {
@@ -26,11 +27,12 @@ const SOURCES = [
   },
 ];
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "About",
   description:
     "The story behind LeafLedger: how cannabis retail in South Africa got here, how clubs can operate legally, and why we built this platform.",
-};
+  path: "/about",
+});
 
 const CLUB_CHECKLIST = [
   "Membership only. Cannabis is shared among verified adult members, not sold to the public.",

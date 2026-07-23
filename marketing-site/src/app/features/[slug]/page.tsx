@@ -8,6 +8,7 @@ import { SectionHeading } from "@/components/shared/section-heading";
 import { Button } from "@/components/ui/button";
 import { FeatureVisual } from "@/components/features/feature-visual";
 import { FEATURE_CATEGORIES } from "@/lib/constants/features";
+import { buildMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return FEATURE_CATEGORIES.map((category) => ({ slug: category.id }));
@@ -22,10 +23,11 @@ export async function generateMetadata({
   const category = FEATURE_CATEGORIES.find((item) => item.id === slug);
   if (!category) return {};
 
-  return {
+  return buildMetadata({
     title: category.title,
     description: category.overview,
-  };
+    path: `/features/${slug}`,
+  });
 }
 
 export default async function FeatureDetailPage({
