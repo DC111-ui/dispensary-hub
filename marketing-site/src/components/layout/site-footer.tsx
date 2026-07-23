@@ -33,8 +33,16 @@ function SiteFooter() {
           ))}
         </nav>
       </Container>
-      <Container className="border-border text-muted-foreground border-t py-6 text-sm">
-        © {new Date().getFullYear()} LeafLedger. All rights reserved.
+      <Container className="border-border text-muted-foreground flex flex-col gap-2 border-t py-6 text-sm sm:flex-row sm:items-center sm:justify-between">
+        <span>© 2024 LeafLedger. All rights reserved.</span>
+        <a
+          href="https://darlingtonchanakira.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-foreground transition-colors"
+        >
+          Built by darlingtonchanakira.com
+        </a>
       </Container>
     </footer>
   );
