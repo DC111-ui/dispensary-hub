@@ -1,11 +1,12 @@
 # Marketing Site
 
-The public LeafLedger marketing site: a static Next.js site presenting the full
+The public LeafLedger marketing site: a Next.js site presenting the full
 product feature catalog, compliance positioning, and pricing to attract signups
 ahead of the real product build.
 
 This is Phase 1 (marketing/sales site). It has no live backend or authentication.
-The one dynamic piece is the contact form, which posts leads to a Google Sheet.
+The one dynamic piece is the contact form, which posts leads to a Google Sheet
+via a server-side API route (`/api/contact`).
 
 ## Stack
 
@@ -77,10 +78,30 @@ sheet write, but still returns success to the visitor. The submitted data is
 still visible in the server console log in that case, so nothing is silently
 lost during local development.
 
+## Deploying to AWS Amplify
+
+This app has a server-side API route (`/api/contact`), so it needs Amplify's
+SSR compute, not static hosting. Amplify's manual/drag-and-drop deploy only
+supports static sites, so deploy via a Git-connected app instead:
+
+1. In the Amplify console, create a new app and connect this GitHub repo.
+2. Amplify will find `amplify.yml` at the repo root, which points it at the
+   `marketing-site` subdirectory (this repo is a monorepo — `marketing-site`
+   sits alongside the old prototype in `backend/`/`frontend/`).
+3. In the Amplify app's **Environment variables**, set the same values as
+   `.env.local` (see below): `GOOGLE_SHEET_ID`, `GOOGLE_SERVICE_ACCOUNT_EMAIL`,
+   `GOOGLE_PRIVATE_KEY`, and optionally `GOOGLE_SHEET_RANGE`. Nothing secret
+   should ever be committed to the repo.
+4. Push to the connected branch (or trigger a build manually) — Amplify runs
+   `npm ci && npm run build` and deploys the result, including the working
+   contact form.
+
 ## Content guardrails
 
-- No fabricated product screenshots. Nothing is built yet, so features are
-  illustrated with icons/diagrams instead.
-- No fake testimonials or customer logos.
+- Feature pages use coded UI mockups (`src/components/features/mockups/`),
+  not real product screenshots, since Phase 2 (the real product) hasn't been
+  built yet. All mockups share one fictional demo store ("Discreet420",
+  `src/lib/constants/demo-data.ts`) so data stays consistent across screens.
+- No fake testimonials, customer logos, ratings, or review counts.
 - All feature categories are presented as live, current offerings. There is
   no separate "coming soon" or roadmap section on this site.
