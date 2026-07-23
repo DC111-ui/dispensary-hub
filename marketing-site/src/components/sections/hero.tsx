@@ -17,16 +17,14 @@ function Hero() {
       <div className="from-accent/60 via-background to-background pointer-events-none absolute inset-0 bg-gradient-to-br" />
       <Container className="relative grid gap-12 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:py-28">
         <div className="flex flex-col gap-6">
-          <span className="border-border bg-background/70 text-muted-foreground w-fit rounded-full border px-3 py-1 text-xs font-medium tracking-wide uppercase">
-            Built for regulated retailers
-          </span>
           <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
-            Run your whole store from one place.
+            One bad inspection could shut your store down.
           </h1>
           <p className="text-muted-foreground max-w-xl text-lg">
-            Sales, stock, customers, suppliers, and paperwork, all in one
-            simple system. Everything is tracked automatically, so you&apos;re
-            always ready if someone checks your records.
+            Cannabis retail is watched closely, and the rules are still new.
+            If you can&apos;t show clean records the moment someone asks, you
+            risk losing your stock, your license, or your store. LeafLedger
+            keeps every record ready, so you&apos;re never caught out.
           </p>
           <div className="flex flex-col gap-3 sm:flex-row">
             <Link href="/contact?plan=professional">
