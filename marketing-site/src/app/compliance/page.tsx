@@ -22,7 +22,7 @@ export default function CompliancePage() {
           <SectionHeading
             eyebrow="Compliance"
             title="Built to make inspections easy"
-            description="Your business runs on paperwork and records. LeafLedger keeps track of everything automatically — from the moment stock arrives to the moment it's sold."
+            description="Your business runs on paperwork and records. LeafLedger keeps track of everything automatically, from the moment stock arrives to the moment it's sold."
             align="center"
             className="mx-auto"
           />
@@ -33,11 +33,11 @@ export default function CompliancePage() {
         <Container className="flex flex-col gap-8">
           <div className="flex flex-col gap-2 text-center">
             <h2 className="text-2xl font-semibold tracking-tight">
-              Where your products come from — and where they go
+              Where your products come from and where they go
             </h2>
             <p className="text-muted-foreground mx-auto max-w-2xl">
               Every product is linked, start to finish. You can trace anything
-              on your shelf back to the supplier who delivered it — or trace a
+              on your shelf back to the supplier who delivered it, or trace a
               sale forward to the customer who bought it.
             </p>
           </div>

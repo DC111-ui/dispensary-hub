@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "LeafLedger — Run Your Whole Store From One Place",
+    default: "LeafLedger: Run Your Whole Store From One Place",
     template: "%s | LeafLedger",
   },
   description:

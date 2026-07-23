@@ -7,7 +7,7 @@ const VALUE_PROPS = [
   {
     icon: Layers,
     title: "One system, not five",
-    description: "Everything you need in one app — no more juggling notebooks and spreadsheets.",
+    description: "Everything you need in one app. No more juggling notebooks and spreadsheets.",
   },
   {
     icon: ShieldCheck,
@@ -17,7 +17,7 @@ const VALUE_PROPS = [
   {
     icon: LineChart,
     title: "See how your store is doing",
-    description: "Clear numbers on sales and stock — no spreadsheets, no guessing.",
+    description: "Clear numbers on sales and stock. No spreadsheets, no guessing.",
   },
   {
     icon: Building2,

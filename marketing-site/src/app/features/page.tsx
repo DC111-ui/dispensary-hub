@@ -10,7 +10,7 @@ import { ROADMAP_ITEMS } from "@/lib/constants/roadmap";
 export const metadata: Metadata = {
   title: "Features",
   description:
-    "Everything LeafLedger does — sales, stock, customers, suppliers, reports, compliance, and staff access, all in one place.",
+    "Everything LeafLedger does: sales, stock, customers, suppliers, reports, compliance, and staff access, all in one place.",
 };
 
 export default function FeaturesPage() {
@@ -41,7 +41,7 @@ export default function FeaturesPage() {
           <SectionHeading
             eyebrow="Roadmap"
             title="Coming soon"
-            description="These aren't built yet — they're what we're building next. Nothing here is live in the product today."
+            description="These aren't built yet. They're what we're building next. Nothing here is live in the product today."
             align="center"
             className="mx-auto"
           />

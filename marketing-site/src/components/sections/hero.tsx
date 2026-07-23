@@ -24,7 +24,7 @@ function Hero() {
             Run your whole store from one place.
           </h1>
           <p className="text-muted-foreground max-w-xl text-lg">
-            Sales, stock, customers, suppliers, and all your paperwork — in one
+            Sales, stock, customers, suppliers, and paperwork, all in one
             simple system. Everything is tracked automatically, so you&apos;re
             always ready if someone checks your records.
           </p>

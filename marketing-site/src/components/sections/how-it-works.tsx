@@ -5,7 +5,7 @@ const STEPS = [
   {
     step: "01",
     title: "Set up your catalog",
-    description: "Add your products, batches, and suppliers — or start fresh.",
+    description: "Add your products, batches, and suppliers, or start fresh.",
   },
   {
     step: "02",

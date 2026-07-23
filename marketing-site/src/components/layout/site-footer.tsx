@@ -16,7 +16,7 @@ function SiteFooter() {
             <span className="text-lg">LeafLedger</span>
           </Link>
           <p className="text-muted-foreground max-w-sm text-sm">
-            One simple place to run your store — sales, stock, and paperwork,
+            One simple place to run your store: sales, stock, and paperwork,
             all together.
           </p>
         </div>

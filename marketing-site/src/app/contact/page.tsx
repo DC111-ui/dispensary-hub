@@ -23,7 +23,7 @@ export default async function ContactPage({
         <SectionHeading
           eyebrow="Contact"
           title="Book your free demo"
-          description="Tell us a little about your store. We'll set up a free walkthrough made just for you — no cost, no obligation."
+          description="Tell us a little about your store. We'll set up a free walkthrough made just for you. No cost, no obligation."
           align="center"
           className="mx-auto mb-10"
         />

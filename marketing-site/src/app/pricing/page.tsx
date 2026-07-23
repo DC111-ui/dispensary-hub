@@ -10,7 +10,7 @@ import { PRICING_TIERS } from "@/lib/constants/pricing";
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "Simple, transparent LeafLedger pricing — from a single store to a chain with many branches. Every plan starts with a free demo.",
+    "Simple, transparent LeafLedger pricing, from a single store to a chain with many branches. Every plan starts with a free demo.",
 };
 
 export default function PricingPage() {

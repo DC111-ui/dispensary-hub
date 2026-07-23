@@ -74,7 +74,7 @@ function ContactForm({ defaultPlan }: { defaultPlan?: string }) {
     return (
       <div className="border-border bg-card flex flex-col items-center gap-3 rounded-2xl border p-10 text-center">
         <CheckCircle2 className="text-primary size-10" />
-        <h3 className="text-xl font-semibold">Thanks — we&apos;ve got it</h3>
+        <h3 className="text-xl font-semibold">Thanks! We&apos;ve got it</h3>
         <p className="text-muted-foreground max-w-sm text-sm">
           Someone from the LeafLedger team will be in touch shortly to schedule
           your free demo.

@@ -19,7 +19,7 @@ export default function TermsPage() {
         <div className="text-muted-foreground mt-8 flex flex-col gap-6 text-base leading-7">
           <p>
             This is a placeholder terms of service page for the LeafLedger marketing
-            site. LeafLedger is currently in an early, pre-launch phase — full terms
+            site. LeafLedger is currently in an early, pre-launch phase, and full terms
             of service will be published ahead of general availability.
           </p>
           <p>

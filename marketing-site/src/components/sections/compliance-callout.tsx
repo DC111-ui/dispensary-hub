@@ -13,7 +13,7 @@ function ComplianceCallout() {
         <div className="flex flex-col gap-6">
           <SectionHeading
             eyebrow="Built for inspections"
-            title="Know where everything came from — and where it went"
+            title="Know where everything came from and where it went"
             description="We keep track of every product and every sale automatically, so you can answer any question during an inspection."
           />
           <Link href="/compliance" className="w-fit">
@@ -29,14 +29,14 @@ function ComplianceCallout() {
             <IconBadge icon={GitBranch} />
             <h3 className="font-semibold">Follow every product</h3>
             <p className="text-muted-foreground text-sm">
-              From your supplier, to your shelf, to your customer — all connected.
+              From your supplier, to your shelf, to your customer, all connected.
             </p>
           </div>
           <div className="flex flex-col gap-3">
             <IconBadge icon={FileClock} />
             <h3 className="font-semibold">A complete history</h3>
             <p className="text-muted-foreground text-sm">
-              Every action is saved — who did it, what they did, and when. Nothing can be changed or deleted.
+              Every action is saved: who did it, what they did, and when. Nothing can be changed or deleted.
             </p>
           </div>
         </div>
