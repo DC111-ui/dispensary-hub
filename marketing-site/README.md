@@ -1,6 +1,6 @@
 # Marketing Site
 
-The public LeafLedger marketing site — a static Next.js site presenting the full
+The public LeafLedger marketing site: a static Next.js site presenting the full
 product feature catalog, compliance positioning, and pricing to attract signups
 ahead of the real product build.
 
@@ -34,20 +34,19 @@ Open <http://localhost:3000>.
 
 Page and component copy lives as typed data in `src/lib/constants/`:
 
-- `features.ts` — the 8 feature categories (used on both the home page's
+- `features.ts` — the feature categories (used on both the home page's
   condensed grid and the full `/features` page)
 - `pricing.ts` — pricing tiers, add-ons, and FAQ (used on both the home page
   teaser and the full `/pricing` page)
-- `roadmap.ts` — "Coming soon" items
 - `nav.ts` — header/footer navigation links
 
 Editing these files updates every page that renders them, so copy can't drift
 between the condensed and full versions.
 
-## Honesty guardrails
+## Content guardrails
 
-- No fabricated product screenshots — nothing is built yet, so features are
+- No fabricated product screenshots. Nothing is built yet, so features are
   illustrated with icons/diagrams instead.
 - No fake testimonials or customer logos.
-- Roadmap/"Coming soon" items (`src/lib/constants/roadmap.ts`) must stay
-  visually distinct from live features and never be presented as shipped.
+- All feature categories are presented as live, current offerings. There is
+  no separate "coming soon" or roadmap section on this site.
