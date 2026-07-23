@@ -4,6 +4,7 @@ import { Leaf } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/shared/container";
 import { MobileNav } from "@/components/layout/mobile-nav";
+import { FeaturesNavMenu } from "@/components/layout/features-nav-menu";
 import { NAV_LINKS, NAV_CTA } from "@/lib/constants/nav";
 
 function SiteHeader() {
@@ -18,15 +19,19 @@ function SiteHeader() {
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="hover:bg-accent hover:text-accent-foreground rounded-md px-4 py-2 text-sm font-medium transition-colors"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {NAV_LINKS.map((link) =>
+            link.href === "/features" ? (
+              <FeaturesNavMenu key={link.href} />
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="hover:bg-accent hover:text-accent-foreground rounded-md px-4 py-2 text-sm font-medium transition-colors"
+              >
+                {link.label}
+              </Link>
+            )
+          )}
         </nav>
 
         <div className="flex items-center gap-2">

@@ -20,6 +20,7 @@ export type FeatureCategory = {
   id: string;
   title: string;
   tagline: string;
+  overview: string;
   icon: LucideIcon;
   highlights: string[];
   /** Shown in the condensed grid on the home page. */
@@ -31,6 +32,8 @@ export const FEATURE_CATEGORIES: FeatureCategory[] = [
     id: "pos",
     title: "Point of Sale & Checkout",
     tagline: "A fast, simple till for ringing up sales.",
+    overview:
+      "Your till is the heart of the store. LeafLedger's point of sale is built to be fast at checkout, accurate every time, and simple enough for any staff member to use on day one.",
     icon: ShoppingCart,
     highlights: [
       "See your sales and find products instantly",
@@ -45,6 +48,8 @@ export const FEATURE_CATEGORIES: FeatureCategory[] = [
     id: "inventory",
     title: "Inventory & Batch Tracking",
     tagline: "Always know exactly what stock you have, and where it came from.",
+    overview:
+      "Every product you carry belongs to a batch, and every batch tells its own story: what supplier it came from, when it was received, and what happened to it since. LeafLedger tracks stock at the batch level so you always know exactly what you have.",
     icon: Package,
     highlights: [
       "Track stock by batch, not just by product",
@@ -58,6 +63,8 @@ export const FEATURE_CATEGORIES: FeatureCategory[] = [
     id: "products",
     title: "Products & Catalog",
     tagline: "One simple place for all your product details.",
+    overview:
+      "Keep every product detail in one place instead of scattered across notebooks and spreadsheets. From barcodes to potency levels to pricing, your whole catalog lives in one simple system.",
     icon: Tags,
     highlights: [
       "Store product codes and barcodes in one place",
@@ -71,6 +78,8 @@ export const FEATURE_CATEGORIES: FeatureCategory[] = [
     id: "customers",
     title: "Customers & Loyalty",
     tagline: "Know your customers and keep them coming back.",
+    overview:
+      "Good customers come back when they feel known. LeafLedger keeps a full history for every customer, so your team can offer the right rewards at the right time.",
     icon: Users,
     highlights: [
       "Customer profiles with full purchase history",
@@ -84,6 +93,8 @@ export const FEATURE_CATEGORIES: FeatureCategory[] = [
     id: "suppliers",
     title: "Suppliers & Purchasing",
     tagline: "Manage every supplier relationship in one place.",
+    overview:
+      "Your suppliers keep your shelves full. LeafLedger keeps every supplier relationship organized, from first contact to the invoices and deliveries that follow.",
     icon: Truck,
     highlights: [
       "Keep all your supplier details in one place",
@@ -97,6 +108,8 @@ export const FEATURE_CATEGORIES: FeatureCategory[] = [
     id: "reporting",
     title: "Owner Insights & Reporting",
     tagline: "The numbers that matter, without the spreadsheet.",
+    overview:
+      "Numbers you can trust, without building your own spreadsheet. See how your store is really doing, any time you need to.",
     icon: BarChart3,
     highlights: [
       "See your sales and stock at a glance",
@@ -109,6 +122,8 @@ export const FEATURE_CATEGORIES: FeatureCategory[] = [
     id: "compliance",
     title: "Compliance & Traceability",
     tagline: "A full record of everything, for every store.",
+    overview:
+      "Regulated retail runs on records. LeafLedger keeps a complete history of every action, so you can answer any question during an inspection.",
     icon: ShieldCheck,
     highlights: [
       "A record of every action taken, that can't be changed",
@@ -121,6 +136,8 @@ export const FEATURE_CATEGORIES: FeatureCategory[] = [
     id: "access",
     title: "Access, Roles & Multi-Store",
     tagline: "The right access, for the right person, at every location.",
+    overview:
+      "Not everyone on your team needs to see everything. LeafLedger gives each staff member the right access for their role, across every store you run.",
     icon: KeyRound,
     highlights: [
       "Safe staff logins, with extra security built in",
@@ -134,6 +151,8 @@ export const FEATURE_CATEGORIES: FeatureCategory[] = [
     id: "online-store",
     title: "Online Store",
     tagline: "A simple website where customers can browse and reserve online.",
+    overview:
+      "Meet your customers where they already are. A simple online storefront lets them browse and reserve, built to match how your physical store already works.",
     icon: Globe,
     highlights: [
       "Customers can browse your products online",
@@ -146,6 +165,8 @@ export const FEATURE_CATEGORIES: FeatureCategory[] = [
     id: "whatsapp-ordering",
     title: "WhatsApp Ordering",
     tagline: "Let customers browse and order through WhatsApp.",
+    overview:
+      "Most of your customers are already on WhatsApp. Let them order there directly, without downloading anything new.",
     icon: MessageCircle,
     highlights: [
       "Customers order without installing an app",
@@ -158,6 +179,8 @@ export const FEATURE_CATEGORIES: FeatureCategory[] = [
     id: "ai-forecasting",
     title: "AI Assistant & Forecasting",
     tagline: "An assistant that helps you decide what to restock and when.",
+    overview:
+      "Stock decisions are easier with a second opinion. LeafLedger's assistant looks at your real sales and stock data to help you decide what to restock and when.",
     icon: Sparkles,
     highlights: [
       "Predicts what you'll need to restock",
@@ -170,6 +193,8 @@ export const FEATURE_CATEGORIES: FeatureCategory[] = [
     id: "smart-inventory",
     title: "Smart Inventory",
     tagline: "Automatically tells you when to reorder stock.",
+    overview:
+      "Stop guessing when to reorder. LeafLedger watches your stock levels and tells you before you run out, or before something expires.",
     icon: Boxes,
     highlights: [
       "Reorder suggestions based on real sales",
@@ -182,6 +207,8 @@ export const FEATURE_CATEGORIES: FeatureCategory[] = [
     id: "integrations",
     title: "Platform & Integrations",
     tagline: "Connects with the accounting, payment, and messaging tools you already use.",
+    overview:
+      "LeafLedger doesn't ask you to abandon the tools you already use. Connect your accounting, payment, and messaging tools, and let everything work together.",
     icon: Plug,
     highlights: [
       "Connects with accounting tools",
@@ -194,6 +221,8 @@ export const FEATURE_CATEGORIES: FeatureCategory[] = [
     id: "mobile-app",
     title: "Mobile App",
     tagline: "Manage your store on the go, from anywhere.",
+    overview:
+      "Your store doesn't stop when you leave the counter. Check sales, stock, and alerts from your phone, wherever you are.",
     icon: Smartphone,
     highlights: [
       "Works for managers, cashiers, and stock staff",
