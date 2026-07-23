@@ -18,7 +18,7 @@ function Hero() {
       <Container className="relative grid gap-12 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:py-28">
         <div className="flex flex-col gap-6">
           <span className="border-border bg-background/70 text-muted-foreground w-fit rounded-full border px-3 py-1 text-xs font-medium tracking-wide uppercase">
-            Now onboarding early customers
+            Built for regulated retailers
           </span>
           <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
             Run your whole store from one place.

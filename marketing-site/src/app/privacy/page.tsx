@@ -19,8 +19,7 @@ export default function PrivacyPage() {
         <div className="text-muted-foreground mt-8 flex flex-col gap-6 text-base leading-7">
           <p>
             This is a placeholder privacy policy for the LeafLedger marketing site.
-            LeafLedger is currently in an early, pre-launch phase, and this page will be
-            replaced with a complete privacy policy ahead of general availability.
+            A complete privacy policy will be published soon.
           </p>
           <p>
             The information submitted through this site (for example, via the contact

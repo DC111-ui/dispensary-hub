@@ -21,7 +21,7 @@ export default function PricingPage() {
           <SectionHeading
             eyebrow="Pricing"
             title="Plans that grow with your store count"
-            description="Every plan includes the full platform. Bigger plans support more stores and extra features. Every plan starts with a free demo."
+            description="Every plan includes the full platform. Bigger plans support more stores and extra features. All plans are billed annually, and every plan starts with a free demo."
             align="center"
             className="mx-auto"
           />
