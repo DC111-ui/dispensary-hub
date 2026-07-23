@@ -3,8 +3,12 @@ import { Leaf } from "lucide-react";
 
 import { Container } from "@/components/shared/container";
 import { FOOTER_LINKS } from "@/lib/constants/nav";
+import { BUSINESS_LOCALITY, BUSINESS_COUNTRY, CONTACT_EMAIL } from "@/lib/constants/site";
 
 function SiteFooter() {
+  const currentYear = new Date().getFullYear();
+  const copyrightRange = currentYear > 2024 ? `2024–${currentYear}` : "2024";
+
   return (
     <footer className="border-border bg-secondary/40 border-t">
       <Container className="flex flex-col gap-8 py-12 sm:flex-row sm:items-start sm:justify-between">
@@ -18,6 +22,13 @@ function SiteFooter() {
           <p className="text-muted-foreground max-w-sm text-sm">
             One simple place to run your store: sales, stock, and paperwork,
             all together.
+          </p>
+          <p className="text-muted-foreground text-sm">
+            <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-foreground transition-colors">
+              {CONTACT_EMAIL}
+            </a>
+            {" · "}
+            {BUSINESS_LOCALITY}, {BUSINESS_COUNTRY}
           </p>
         </div>
 
@@ -34,7 +45,7 @@ function SiteFooter() {
         </nav>
       </Container>
       <Container className="border-border text-muted-foreground flex flex-col gap-2 border-t py-6 text-sm sm:flex-row sm:items-center sm:justify-between">
-        <span>© 2024 LeafLedger. All rights reserved.</span>
+        <span>© {copyrightRange} LeafLedger. All rights reserved.</span>
         <a
           href="https://darlingtonchanakira.com"
           target="_blank"

@@ -3,11 +3,13 @@ import type { Metadata } from "next";
 import { Container } from "@/components/shared/container";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { ContactForm } from "@/components/contact/contact-form";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Contact",
   description: "Book your free demo or get in touch with the LeafLedger team.",
-};
+  path: "/contact",
+});
 
 export default async function ContactPage({
   searchParams,

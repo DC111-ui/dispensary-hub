@@ -4,12 +4,14 @@ import { Container } from "@/components/shared/container";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { FeatureCategoryCard } from "@/components/features/feature-category-card";
 import { FEATURE_CATEGORIES } from "@/lib/constants/features";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Features",
   description:
     "Everything LeafLedger does: sales, stock, customers, suppliers, reports, compliance, staff access, online ordering, and more, all in one place.",
-};
+  path: "/features",
+});
 
 export default function FeaturesPage() {
   return (
