@@ -5,10 +5,12 @@ import { Container } from "@/components/shared/container";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { Button } from "@/components/ui/button";
 import { FeatureCategoryCard } from "@/components/features/feature-category-card";
-import { FEATURE_CATEGORIES } from "@/lib/constants/features";
+import { FEATURE_CATEGORIES, HOME_FEATURED_ORDER } from "@/lib/constants/features";
 
 function FeatureHighlights() {
-  const featured = FEATURE_CATEGORIES.filter((category) => category.homeFeatured);
+  const featured = FEATURE_CATEGORIES
+    .filter((category) => category.homeFeatured)
+    .sort((a, b) => HOME_FEATURED_ORDER.indexOf(a.id) - HOME_FEATURED_ORDER.indexOf(b.id));
 
   return (
     <section className="py-16 sm:py-20">

@@ -12,7 +12,7 @@ const QUICK_ACTIONS = [
 function MobileAppMockup() {
   return (
     <PhoneFrame>
-      <div className="flex h-full flex-col gap-3 overflow-hidden p-3">
+      <div className="flex h-full flex-col gap-3 p-3">
         <div>
           <p className="text-muted-foreground text-[10px]">{DEMO_STORES[0].name}</p>
           <p className="text-sm font-semibold">Good afternoon, {DEMO_STAFF.owner.name.split(" ")[0]}</p>

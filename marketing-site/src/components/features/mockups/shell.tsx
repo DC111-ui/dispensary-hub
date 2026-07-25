@@ -45,7 +45,7 @@ const NAV_ITEMS: { id: NavId; label: string; icon: LucideIcon }[] = [
 
 function BrowserChrome({ path }: { path: string }) {
   return (
-    <div className="bg-muted/60 border-border flex items-center gap-3 border-b px-4 py-2.5">
+    <div className="bg-muted/60 border-border hidden items-center gap-3 border-b px-4 py-2.5 sm:flex">
       <div className="flex gap-1.5">
         <span className="size-2.5 rounded-full bg-[#ff5f57]" />
         <span className="size-2.5 rounded-full bg-[#febc2e]" />
@@ -54,6 +54,20 @@ function BrowserChrome({ path }: { path: string }) {
       <div className="bg-background border-border text-muted-foreground flex-1 truncate rounded-md border px-3 py-1 text-xs">
         app.leafledger.co/{path}
       </div>
+    </div>
+  );
+}
+
+function MobileAppBar({ active }: { active: NavId }) {
+  const item = NAV_ITEMS.find((navItem) => navItem.id === active);
+  if (!item) return null;
+  const Icon = item.icon;
+  return (
+    <div className="bg-muted/60 border-border flex items-center gap-2.5 border-b px-4 py-3 sm:hidden">
+      <span className="bg-primary text-primary-foreground flex size-7 items-center justify-center rounded-lg">
+        <Icon className="size-3.5" />
+      </span>
+      <span className="text-sm font-semibold">{item.label}</span>
     </div>
   );
 }
@@ -76,7 +90,8 @@ function DesktopFrame({
   return (
     <div className="border-border bg-card overflow-hidden rounded-2xl border shadow-xl">
       <BrowserChrome path={path} />
-      <div className="flex h-[420px] sm:h-[460px]">
+      <MobileAppBar active={active} />
+      <div className="flex h-[640px] sm:h-[460px]">
         <aside className="border-border bg-secondary/40 hidden w-44 shrink-0 flex-col gap-0.5 border-r p-3 sm:flex">
           <div className="flex items-center gap-2 px-2 pb-3">
             <span className="bg-primary text-primary-foreground flex size-6 items-center justify-center rounded-md text-[10px] font-bold">
@@ -112,7 +127,7 @@ function DesktopFrame({
               </span>
             </div>
           </div>
-          <div className="min-w-0 flex-1 overflow-hidden p-4 sm:p-6">{children}</div>
+          <div className="min-w-0 flex-1 overflow-y-auto p-4 sm:p-6">{children}</div>
         </div>
       </div>
     </div>
@@ -128,12 +143,12 @@ function PhoneFrame({
 }) {
   return (
     <div className="flex justify-center">
-      <div className="border-foreground/80 bg-card relative flex h-[520px] w-[280px] flex-col overflow-hidden rounded-[2.5rem] border-[6px] shadow-xl">
+      <div className="border-foreground/80 bg-card relative flex h-[520px] w-[min(280px,85vw)] flex-col overflow-hidden rounded-[2.5rem] border-[6px] shadow-xl">
         <div className="bg-foreground/80 absolute top-0 left-1/2 z-10 h-5 w-28 -translate-x-1/2 rounded-b-2xl" />
         <div className="border-border flex items-center justify-center border-b px-4 pt-7 pb-2.5">
           <span className="text-xs font-semibold">{label}</span>
         </div>
-        <div className="flex-1 overflow-hidden">{children}</div>
+        <div className="flex-1 overflow-y-auto">{children}</div>
       </div>
     </div>
   );

@@ -26,7 +26,7 @@ function Bubble({
 function WhatsappOrderingMockup() {
   return (
     <PhoneFrame label={`${DEMO_BUSINESS} · WhatsApp`}>
-      <div className="flex h-full flex-col gap-2.5 overflow-hidden bg-[oklch(0.97_0.01_155)] p-3 dark:bg-[oklch(0.22_0.02_155)]">
+      <div className="flex h-full flex-col gap-2.5 bg-[oklch(0.97_0.01_155)] p-3 dark:bg-[oklch(0.22_0.02_155)]">
         <Bubble from="customer">Hi, is Blue Dream in stock?</Bubble>
         <Bubble from="store">
           Yes! Blue Dream 3.5g is R280, 34 units in stock at Cape Town CBD.

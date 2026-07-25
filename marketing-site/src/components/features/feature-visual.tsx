@@ -5,14 +5,7 @@ function FeatureVisual({ category }: { category: FeatureCategory }) {
   const Mockup = FEATURE_MOCKUPS[category.id];
 
   if (Mockup) {
-    return (
-      <div>
-        <Mockup />
-        <p className="text-muted-foreground mt-3 text-center text-xs">
-          A mockup of {category.title.toLowerCase()} in LeafLedger.
-        </p>
-      </div>
-    );
+    return <Mockup />;
   }
 
   const Icon = category.icon;

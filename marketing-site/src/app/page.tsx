@@ -1,4 +1,5 @@
 import { Hero } from "@/components/sections/hero";
+import { MockupCarousel } from "@/components/sections/mockup-carousel";
 import { ValueProps } from "@/components/sections/value-props";
 import { FeatureHighlights } from "@/components/sections/feature-highlights";
 import { HowItWorks } from "@/components/sections/how-it-works";
@@ -10,6 +11,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <MockupCarousel />
       <ValueProps />
       <FeatureHighlights />
       <HowItWorks />

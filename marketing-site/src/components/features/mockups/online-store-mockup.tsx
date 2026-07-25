@@ -9,7 +9,7 @@ function OnlineStoreMockup() {
   return (
     <div className="border-border bg-card overflow-hidden rounded-2xl border shadow-xl">
       <BrowserChrome path="shop.leafledger.co/discreet420" />
-      <div className="h-[420px] overflow-hidden p-4 sm:h-[460px] sm:p-6">
+      <div className="h-[640px] overflow-y-auto p-4 sm:h-[460px] sm:p-6">
         <div className="mb-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="bg-primary text-primary-foreground flex size-7 items-center justify-center rounded-md">

@@ -29,6 +29,62 @@ export type FeatureCategory = {
 
 export const FEATURE_CATEGORIES: FeatureCategory[] = [
   {
+    id: "whatsapp-ordering",
+    title: "WhatsApp Ordering",
+    tagline: "Let customers browse and order through WhatsApp.",
+    overview:
+      "Most of your customers are already on WhatsApp. Let them order there directly, without downloading anything new.",
+    icon: MessageCircle,
+    highlights: [
+      "Customers order without installing an app",
+      "Automatic replies to common questions",
+      "Orders flow straight into your system",
+    ],
+    homeFeatured: false,
+  },
+  {
+    id: "online-store",
+    title: "Online Store",
+    tagline: "A simple website where customers can browse and reserve online.",
+    overview:
+      "Meet your customers where they already are. A simple online storefront lets them browse and reserve, built to match how your physical store already works.",
+    icon: Globe,
+    highlights: [
+      "Customers can browse your products online",
+      "Reserve items for pickup",
+      "Built to match how your physical store works",
+    ],
+    homeFeatured: false,
+  },
+  {
+    id: "mobile-app",
+    title: "Mobile App",
+    tagline: "Manage your store on the go, from anywhere.",
+    overview:
+      "Your store doesn't stop when you leave the counter. Check sales, stock, and alerts from your phone, wherever you are.",
+    icon: Smartphone,
+    highlights: [
+      "Works for managers, cashiers, and stock staff",
+      "Check sales and stock from your phone",
+      "Get alerts wherever you are",
+    ],
+    homeFeatured: false,
+  },
+  {
+    id: "ai-forecasting",
+    title: "AI Assistant & Forecasting",
+    tagline: "An assistant that helps you decide what to restock and when.",
+    overview:
+      "Stock decisions are easier with a second opinion. LeafLedger's assistant looks at your real sales and stock data to help you decide what to restock and when.",
+    icon: Sparkles,
+    highlights: [
+      "Predicts what you'll need to restock",
+      "Answers questions about your sales and stock",
+      "Spots patterns you might miss",
+    ],
+    homeFeatured: false,
+  },
+  {
     id: "pos",
     title: "Point of Sale & Checkout",
     tagline: "A fast, simple till for ringing up sales.",
@@ -77,11 +133,12 @@ export const FEATURE_CATEGORIES: FeatureCategory[] = [
   {
     id: "customers",
     title: "Customers & Loyalty",
-    tagline: "Know your customers and keep them coming back.",
+    tagline: "Know your members, and keep your club on the right side of the law.",
     overview:
-      "Good customers come back when they feel known. LeafLedger keeps a full history for every customer, so your team can offer the right rewards at the right time.",
+      "For a club, every sale has to go to a real, registered adult member, not a walk-in from the public. LeafLedger verifies members before they buy, and keeps a full history for every customer so your team can offer the right rewards at the right time.",
     icon: Users,
     highlights: [
+      "Verify every member before they buy: age, ID, and registration status",
       "Customer profiles with full purchase history",
       "Reward points customers can build up and use later",
       "VIP tiers for your best customers",
@@ -121,16 +178,17 @@ export const FEATURE_CATEGORIES: FeatureCategory[] = [
   {
     id: "compliance",
     title: "Compliance & Traceability",
-    tagline: "A full record of everything, for every store.",
+    tagline: "A full record of everything, for every store or club.",
     overview:
-      "Regulated retail runs on records. LeafLedger keeps a complete history of every action, so you can answer any question during an inspection.",
+      "Regulated retail runs on records. Whether you run a store or a private cannabis club under the Cannabis for Private Purposes Act, LeafLedger keeps a complete history of every action, so you can answer any question during an inspection.",
     icon: ShieldCheck,
     highlights: [
       "A record of every action taken, that can't be changed",
       "Track every product from the supplier to the sale",
+      "Stay within the legal limits for growing and holding stock",
       "Always ready for an inspection",
     ],
-    homeFeatured: false,
+    homeFeatured: true,
   },
   {
     id: "access",
@@ -144,48 +202,6 @@ export const FEATURE_CATEGORIES: FeatureCategory[] = [
       "Invite staff and get them set up fast",
       "Give each staff member the right access: Owner, Manager, Cashier, Inventory Manager, or Compliance Officer",
       "Manage multiple stores from one account",
-    ],
-    homeFeatured: false,
-  },
-  {
-    id: "online-store",
-    title: "Online Store",
-    tagline: "A simple website where customers can browse and reserve online.",
-    overview:
-      "Meet your customers where they already are. A simple online storefront lets them browse and reserve, built to match how your physical store already works.",
-    icon: Globe,
-    highlights: [
-      "Customers can browse your products online",
-      "Reserve items for pickup",
-      "Built to match how your physical store works",
-    ],
-    homeFeatured: false,
-  },
-  {
-    id: "whatsapp-ordering",
-    title: "WhatsApp Ordering",
-    tagline: "Let customers browse and order through WhatsApp.",
-    overview:
-      "Most of your customers are already on WhatsApp. Let them order there directly, without downloading anything new.",
-    icon: MessageCircle,
-    highlights: [
-      "Customers order without installing an app",
-      "Automatic replies to common questions",
-      "Orders flow straight into your system",
-    ],
-    homeFeatured: false,
-  },
-  {
-    id: "ai-forecasting",
-    title: "AI Assistant & Forecasting",
-    tagline: "An assistant that helps you decide what to restock and when.",
-    overview:
-      "Stock decisions are easier with a second opinion. LeafLedger's assistant looks at your real sales and stock data to help you decide what to restock and when.",
-    icon: Sparkles,
-    highlights: [
-      "Predicts what you'll need to restock",
-      "Answers questions about your sales and stock",
-      "Spots patterns you might miss",
     ],
     homeFeatured: false,
   },
@@ -217,18 +233,19 @@ export const FEATURE_CATEGORIES: FeatureCategory[] = [
     ],
     homeFeatured: false,
   },
-  {
-    id: "mobile-app",
-    title: "Mobile App",
-    tagline: "Manage your store on the go, from anywhere.",
-    overview:
-      "Your store doesn't stop when you leave the counter. Check sales, stock, and alerts from your phone, wherever you are.",
-    icon: Smartphone,
-    highlights: [
-      "Works for managers, cashiers, and stock staff",
-      "Check sales and stock from your phone",
-      "Get alerts wherever you are",
-    ],
-    homeFeatured: false,
-  },
+];
+
+/**
+ * Home page leads with running a club/membership model legally, then the
+ * day-to-day operational features. Only affects display order on the home
+ * page; the full features list and nav keep the catalog order above.
+ */
+export const HOME_FEATURED_ORDER = [
+  "compliance",
+  "customers",
+  "suppliers",
+  "reporting",
+  "pos",
+  "products",
+  "inventory",
 ];
