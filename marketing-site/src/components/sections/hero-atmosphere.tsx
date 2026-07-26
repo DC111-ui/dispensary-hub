@@ -1,9 +1,13 @@
 "use client";
 
 import * as React from "react";
+import dynamic from "next/dynamic";
 import { motion, useScroll, useTransform } from "motion/react";
 
-import { HeroWebglBackground } from "@/components/sections/hero-webgl-background";
+const HeroWebglBackground = dynamic(
+  () => import("@/components/sections/hero-webgl-background").then((m) => m.HeroWebglBackground),
+  { ssr: false }
+);
 
 const GRADIENT =
   "linear-gradient(125deg, hsl(4 65% 62%) 0%, hsl(85 55% 62%) 33%, hsl(145 55% 46%) 66%, hsl(162 50% 50%) 100%)";

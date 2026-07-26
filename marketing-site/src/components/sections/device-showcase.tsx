@@ -39,7 +39,7 @@ function DeviceShowcase() {
               cropped or overlapping); fills the whole card from sm: up. */}
           <div className="relative aspect-[3168/1344] w-full sm:absolute sm:inset-0 sm:aspect-auto">
             <Image
-              src="/images/device-showcase.png"
+              src="/images/device-showcase.webp"
               alt="The LeafLedger dashboard shown on a desktop monitor, a laptop, and a phone"
               fill
               sizes="(min-width: 1024px) 1152px, 100vw"
