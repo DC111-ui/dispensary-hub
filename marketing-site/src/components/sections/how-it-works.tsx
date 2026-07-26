@@ -2,7 +2,6 @@ import { ArrowDown, ArrowRight } from "lucide-react";
 
 import { Container } from "@/components/shared/container";
 import { SectionHeading } from "@/components/shared/section-heading";
-import { LazyReveal } from "@/components/motion/lazy-reveal";
 
 const STEPS = [
   {
@@ -26,7 +25,7 @@ function HowItWorks() {
   return (
     <section className="bg-secondary/30 py-20 sm:py-24">
       <Container>
-        <LazyReveal className="flex flex-col gap-10">
+        <div className="flex flex-col gap-10">
           <SectionHeading
             eyebrow="How it works"
             title="Up and running in three steps"
@@ -50,7 +49,7 @@ function HowItWorks() {
               </div>
             ))}
           </div>
-        </LazyReveal>
+        </div>
       </Container>
     </section>
   );

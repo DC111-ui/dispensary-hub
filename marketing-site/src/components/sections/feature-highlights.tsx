@@ -6,7 +6,6 @@ import { SectionHeading } from "@/components/shared/section-heading";
 import { Button } from "@/components/ui/button";
 import { FeatureCategoryCard } from "@/components/features/feature-category-card";
 import { FEATURE_CATEGORIES, HOME_FEATURED_ORDER } from "@/lib/constants/features";
-import { LazyRevealGroup, LazyRevealItem } from "@/components/motion/lazy-reveal";
 
 function FeatureHighlights() {
   const featured = FEATURE_CATEGORIES
@@ -30,13 +29,11 @@ function FeatureHighlights() {
           </Link>
         </div>
 
-        <LazyRevealGroup className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {featured.map((category) => (
-            <LazyRevealItem key={category.id}>
-              <FeatureCategoryCard category={category} />
-            </LazyRevealItem>
+            <FeatureCategoryCard key={category.id} category={category} />
           ))}
-        </LazyRevealGroup>
+        </div>
       </Container>
     </section>
   );

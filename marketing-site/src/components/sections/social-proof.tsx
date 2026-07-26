@@ -1,7 +1,6 @@
 import { Container } from "@/components/shared/container";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { TestimonialCard } from "@/components/shared/testimonial-card";
-import { LazyRevealGroup, LazyRevealItem } from "@/components/motion/lazy-reveal";
 import { PLACEHOLDER_CLUB_LOGOS, PLACEHOLDER_TESTIMONIALS } from "@/lib/constants/testimonials";
 
 function SocialProof() {
@@ -14,13 +13,11 @@ function SocialProof() {
           description="LeafLedger is live with a small group of pilot clubs today. Here's what running compliance this way looks like for them."
         />
 
-        <LazyRevealGroup className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {PLACEHOLDER_TESTIMONIALS.map((testimonial) => (
-            <LazyRevealItem key={testimonial.authorName}>
-              <TestimonialCard {...testimonial} />
-            </LazyRevealItem>
+            <TestimonialCard key={testimonial.authorName} {...testimonial} />
           ))}
-        </LazyRevealGroup>
+        </div>
 
         <div className="border-border flex flex-wrap items-center gap-3 border-t pt-8">
           <span className="text-muted-foreground text-sm font-medium">Pilot clubs include</span>

@@ -6,13 +6,12 @@ import { SectionHeading } from "@/components/shared/section-heading";
 import { Button } from "@/components/ui/button";
 import { PricingCard } from "@/components/pricing/pricing-card";
 import { PRICING_TIERS } from "@/lib/constants/pricing";
-import { LazyReveal } from "@/components/motion/lazy-reveal";
 
 function PricingTeaser() {
   return (
     <section className="py-16 sm:py-20">
       <Container>
-        <LazyReveal className="flex flex-col gap-10">
+        <div className="flex flex-col gap-10">
           <SectionHeading
             eyebrow="Pricing"
             title="Simple, transparent plans"
@@ -33,7 +32,7 @@ function PricingTeaser() {
               <ArrowRight className="size-4" />
             </Button>
           </Link>
-        </LazyReveal>
+        </div>
       </Container>
     </section>
   );

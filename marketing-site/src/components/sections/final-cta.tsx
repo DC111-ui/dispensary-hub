@@ -3,13 +3,12 @@ import { ArrowRight } from "lucide-react";
 
 import { Container } from "@/components/shared/container";
 import { Button } from "@/components/ui/button";
-import { LazyReveal } from "@/components/motion/lazy-reveal";
 
 function FinalCta() {
   return (
     <section className="py-16 sm:py-20">
       <Container>
-        <LazyReveal className="bg-primary text-primary-foreground flex flex-col items-center gap-6 rounded-2xl px-6 py-16 text-center">
+        <div className="bg-primary text-primary-foreground flex flex-col items-center gap-6 rounded-2xl px-6 py-16 text-center">
           <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
             Don&apos;t wait for an inspection to find out your records aren&apos;t ready.
           </h2>
@@ -31,7 +30,7 @@ function FinalCta() {
               See how compliance works
             </Link>
           </div>
-        </LazyReveal>
+        </div>
       </Container>
     </section>
   );

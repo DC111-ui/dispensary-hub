@@ -5,13 +5,12 @@ import { Container } from "@/components/shared/container";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { Button } from "@/components/ui/button";
 import { TraceabilityDiagram } from "@/components/compliance/traceability-diagram";
-import { LazyReveal } from "@/components/motion/lazy-reveal";
 
 function ComplianceCallout() {
   return (
     <section className="py-20 sm:py-24">
       <Container>
-        <LazyReveal className="flex flex-col gap-10">
+        <div className="flex flex-col gap-10">
           <SectionHeading
             eyebrow="Built for inspections"
             title="If SAPS walks in tomorrow, can you answer every question?"
@@ -24,7 +23,7 @@ function ComplianceCallout() {
               <ArrowRight className="size-4" />
             </Button>
           </Link>
-        </LazyReveal>
+        </div>
       </Container>
     </section>
   );
