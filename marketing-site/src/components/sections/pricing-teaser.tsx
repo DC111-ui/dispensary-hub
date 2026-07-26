@@ -20,10 +20,16 @@ function PricingTeaser() {
             className="mx-auto"
           />
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {PRICING_TIERS.map((tier) => (
-              <PricingCard key={tier.id} tier={tier} />
-            ))}
+          <div className="relative">
+            <div
+              className="bg-brand-glow pointer-events-none absolute -inset-8 rounded-[3rem] opacity-40 blur-3xl"
+              aria-hidden="true"
+            />
+            <div className="relative grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {PRICING_TIERS.map((tier) => (
+                <PricingCard key={tier.id} tier={tier} />
+              ))}
+            </div>
           </div>
 
           <Link href="/pricing" className="mx-auto">

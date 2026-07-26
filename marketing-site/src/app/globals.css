@@ -129,3 +129,82 @@
     background-position: 140px 90px;
   }
 }
+
+.bg-brand-wash {
+  background: linear-gradient(
+    120deg,
+    hsl(4 85% 82%) 0%,
+    hsl(85 75% 80%) 33%,
+    hsl(145 65% 78%) 66%,
+    hsl(162 65% 79%) 100%
+  );
+}
+[data-theme="dark"] .bg-brand-wash {
+  background: linear-gradient(
+    120deg,
+    hsl(4 55% 26%) 0%,
+    hsl(85 50% 24%) 33%,
+    hsl(145 45% 24%) 66%,
+    hsl(162 45% 25%) 100%
+  );
+}
+
+.bg-brand-glow {
+  background: linear-gradient(
+    120deg,
+    hsl(4 85% 70%) 0%,
+    hsl(85 75% 68%) 33%,
+    hsl(145 65% 62%) 66%,
+    hsl(162 65% 64%) 100%
+  );
+}
+[data-theme="dark"] .bg-brand-glow {
+  background: linear-gradient(
+    120deg,
+    hsl(4 75% 55%) 0%,
+    hsl(85 65% 50%) 33%,
+    hsl(145 60% 45%) 66%,
+    hsl(162 60% 48%) 100%
+  );
+}
+
+/* Pale, cool-tinted page background used on "product marketing" style
+   inner pages (pricing, about, contact, sign-in) — modeled directly on
+   Stripe's #F6F9FC page background rather than plain white. */
+.bg-page-tint {
+  background-color: oklch(0.97 0.008 240);
+}
+[data-theme="dark"] .bg-page-tint {
+  background-color: oklch(0.19 0.02 240);
+}
+
+.brand-ribbon {
+  background: linear-gradient(
+    100deg,
+    hsl(4 90% 62%) 0%,
+    hsl(35 90% 60%) 20%,
+    hsl(85 75% 58%) 40%,
+    hsl(150 65% 52%) 60%,
+    hsl(165 60% 52%) 80%,
+    hsl(4 90% 62%) 100%
+  );
+}
+
+/* Slides the (wider-than-its-frame) gradient band left/right so different
+   color regions scroll through the visible window — a real moving flow,
+   not just a filter tint. transform-only, so it stays compositor-cheap. */
+@keyframes ribbon-slide {
+  0%,
+  100% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(-18%);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .brand-ribbon {
+    animation: ribbon-slide 11s ease-in-out infinite;
+  }
+}

@@ -8,12 +8,15 @@ function SectionHeading({
   description,
   align = "left",
   className,
+  titleClassName,
 }: {
   eyebrow?: string;
   title: React.ReactNode;
   description?: React.ReactNode;
   align?: "left" | "center";
   className?: string;
+  /** Override the title's default size/weight — for pages that need a bigger, bolder, Stripe-style display heading. */
+  titleClassName?: string;
 }) {
   return (
     <div
@@ -28,7 +31,9 @@ function SectionHeading({
           {eyebrow}
         </span>
       ) : null}
-      <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">{title}</h2>
+      <h2 className={cn("text-3xl font-semibold tracking-tight sm:text-4xl", titleClassName)}>
+        {title}
+      </h2>
       {description ? (
         <p className="text-muted-foreground max-w-2xl text-lg">{description}</p>
       ) : null}

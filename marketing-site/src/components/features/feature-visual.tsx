@@ -5,7 +5,17 @@ function FeatureVisual({ category }: { category: FeatureCategory }) {
   const Mockup = FEATURE_MOCKUPS[category.id];
 
   if (Mockup) {
-    return <Mockup />;
+    return (
+      <div className="relative">
+        <div
+          className="bg-brand-glow pointer-events-none absolute -inset-12 rounded-[3rem] opacity-50 blur-3xl"
+          aria-hidden="true"
+        />
+        <div className="relative">
+          <Mockup />
+        </div>
+      </div>
+    );
   }
 
   const Icon = category.icon;

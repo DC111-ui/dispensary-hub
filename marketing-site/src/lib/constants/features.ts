@@ -16,18 +16,23 @@ import {
   Smartphone,
 } from "lucide-react";
 
+import type { IconTone } from "@/components/shared/icon-badge";
+
 export type FeatureCategory = {
   id: string;
   title: string;
   tagline: string;
   overview: string;
   icon: LucideIcon;
+  tone: IconTone;
   highlights: string[];
   /** Shown in the condensed grid on the home page. */
   homeFeatured: boolean;
 };
 
-export const FEATURE_CATEGORIES: FeatureCategory[] = [
+const TONE_CYCLE: IconTone[] = ["rust", "chartreuse", "green", "teal"];
+
+const FEATURE_CATEGORIES_BASE: Omit<FeatureCategory, "tone">[] = [
   {
     id: "whatsapp-ordering",
     title: "WhatsApp Ordering",
@@ -234,6 +239,13 @@ export const FEATURE_CATEGORIES: FeatureCategory[] = [
     homeFeatured: false,
   },
 ];
+
+export const FEATURE_CATEGORIES: FeatureCategory[] = FEATURE_CATEGORIES_BASE.map(
+  (category, index) => ({
+    ...category,
+    tone: TONE_CYCLE[index % TONE_CYCLE.length],
+  })
+);
 
 /**
  * Home page leads with running a club/membership model legally, then the

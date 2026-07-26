@@ -23,7 +23,7 @@ const STEPS = [
 
 function HowItWorks() {
   return (
-    <section className="bg-secondary/30 py-20 sm:py-24">
+    <section className="bg-brand-wash py-20 sm:py-24">
       <Container>
         <div className="flex flex-col gap-10">
           <SectionHeading

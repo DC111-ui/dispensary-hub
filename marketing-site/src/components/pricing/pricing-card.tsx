@@ -18,7 +18,7 @@ function PricingCard({ tier }: { tier: PricingTier }) {
   return (
     <Card
       className={cn(
-        "relative flex flex-col",
+        "relative flex flex-col transition-transform hover:-translate-y-1",
         tier.emphasized && "border-primary shadow-lg ring-1 ring-primary"
       )}
     >
