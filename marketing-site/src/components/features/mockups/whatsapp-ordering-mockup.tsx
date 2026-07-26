@@ -35,8 +35,8 @@ function WhatsappOrderingMockup() {
         <Bubble from="store">
           <div className="space-y-1">
             <p className="font-semibold">Order #4821</p>
-            <p>Blue Dream 3.5g — R280</p>
-            <p>OG Kush Pre-Roll ×2 — R130</p>
+            <p>Blue Dream 3.5g: R280</p>
+            <p>OG Kush Pre-Roll ×2: R130</p>
             <p className="border-border/40 mt-1 border-t pt-1 font-semibold">Total: R410</p>
           </div>
         </Bubble>

@@ -1,20 +1,16 @@
 import Link from "next/link";
-import { ArrowRight, ShieldCheck, Boxes, Users, Store } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/shared/container";
-
-const HERO_TILES = [
-  { icon: Store, label: "Point of Sale" },
-  { icon: Boxes, label: "Stock Tracking" },
-  { icon: Users, label: "Customers & Loyalty" },
-  { icon: ShieldCheck, label: "Records & Inspections" },
-];
+import { HeroAtmosphere } from "@/components/sections/hero-atmosphere";
+import { HeroTiles } from "@/components/sections/hero-tiles";
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden">
-      <div className="from-accent/60 via-background to-background pointer-events-none absolute inset-0 bg-gradient-to-br" />
+    <section className="relative isolate">
+      <HeroAtmosphere />
+
       <Container className="relative grid gap-12 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:py-28">
         <div className="flex flex-col gap-6">
           <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
@@ -27,13 +23,20 @@ function Hero() {
           </p>
           <div className="flex flex-col gap-3 sm:flex-row">
             <Link href="/contact?plan=professional">
-              <Button size="lg" className="w-full sm:w-auto">
+              <Button
+                size="lg"
+                className="w-full transition-transform duration-200 ease-out hover:-translate-y-0.5 active:translate-y-0 sm:w-auto"
+              >
                 Book a free demo
                 <ArrowRight className="size-4" />
               </Button>
             </Link>
             <Link href="/features">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto">
+              <Button
+                size="lg"
+                variant="outline"
+                className="w-full transition-transform duration-200 ease-out hover:-translate-y-0.5 active:translate-y-0 sm:w-auto"
+              >
                 See everything it does
               </Button>
             </Link>
@@ -50,21 +53,7 @@ function Hero() {
           </Link>
         </div>
 
-        <div className="relative">
-          <div className="border-border bg-card/80 grid grid-cols-2 gap-4 rounded-2xl border p-6 shadow-xl backdrop-blur-sm">
-            {HERO_TILES.map(({ icon: Icon, label }) => (
-              <div
-                key={label}
-                className="border-border bg-background flex flex-col items-start gap-3 rounded-xl border p-5"
-              >
-                <span className="bg-accent text-accent-foreground flex size-9 items-center justify-center rounded-lg">
-                  <Icon className="size-4.5" />
-                </span>
-                <span className="text-sm font-medium">{label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
+        <HeroTiles />
       </Container>
     </section>
   );

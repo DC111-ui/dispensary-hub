@@ -32,7 +32,7 @@ function AiForecastingMockup() {
             <Sparkles className="size-3.5" />
           </span>
           <p className="text-xs leading-relaxed">
-            Done — PO-1043 sent to Cape Canna Farms for 40 units, expected in
+            Done: PO-1043 sent to Cape Canna Farms for 40 units, expected in
             3 days.
           </p>
         </div>

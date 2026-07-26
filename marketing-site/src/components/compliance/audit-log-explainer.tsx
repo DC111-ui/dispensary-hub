@@ -1,7 +1,5 @@
 import { FileClock, Lock, UserCheck } from "lucide-react";
 
-import { IconBadge } from "@/components/shared/icon-badge";
-
 const POINTS = [
   {
     icon: FileClock,
@@ -23,12 +21,19 @@ const POINTS = [
 
 function AuditLogExplainer() {
   return (
-    <div className="grid gap-8 sm:grid-cols-3">
-      {POINTS.map(({ icon, title, description }) => (
-        <div key={title} className="flex flex-col gap-4">
-          <IconBadge icon={icon} />
-          <div className="flex flex-col gap-1.5">
-            <h3 className="font-semibold">{title}</h3>
+    <div className="mx-auto flex max-w-2xl flex-col">
+      {POINTS.map(({ icon: Icon, title, description }, index) => (
+        <div key={title} className="flex gap-4">
+          <div className="flex flex-col items-center">
+            <span className="bg-accent text-accent-foreground flex size-10 shrink-0 items-center justify-center rounded-full">
+              <Icon className="size-4.5" />
+            </span>
+            {index < POINTS.length - 1 ? (
+              <span className="bg-border my-1 w-px flex-1" aria-hidden="true" />
+            ) : null}
+          </div>
+          <div className={index < POINTS.length - 1 ? "pb-8" : ""}>
+            <h3 className="pt-2 font-semibold">{title}</h3>
             <p className="text-muted-foreground text-sm">{description}</p>
           </div>
         </div>

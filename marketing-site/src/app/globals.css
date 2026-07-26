@@ -73,7 +73,6 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @layer base {
@@ -110,4 +109,23 @@
 
 .animate-accordion-up {
   animation: accordion-up 0.2s ease-out;
+}
+
+@keyframes hero-gradient-drift {
+  0%,
+  100% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(4deg);
+  }
+}
+
+@keyframes hero-grain-shift {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 140px 90px;
+  }
 }

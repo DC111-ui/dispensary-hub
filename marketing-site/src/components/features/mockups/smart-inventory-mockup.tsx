@@ -6,17 +6,17 @@ import { DEMO_STAFF } from "@/lib/constants/demo-data";
 const ALERTS = [
   {
     icon: AlertTriangle,
-    title: "Girl Scout Cookies 3.5g — 6 units left",
+    title: "Girl Scout Cookies 3.5g: 6 units left",
     detail: "Reorder suggested: 30 units from Karoo Green Growers",
   },
   {
     icon: Clock,
-    title: "Northern Lights 3.5g — expires in 9 days",
+    title: "Northern Lights 3.5g: expires in 9 days",
     detail: "3 units left. Consider a discount to move stock.",
   },
   {
     icon: TrendingDown,
-    title: "CBD Calm Tincture 30ml — slow mover",
+    title: "CBD Calm Tincture 30ml: slow mover",
     detail: "Only 2 sold in the last 30 days across both stores",
   },
 ];

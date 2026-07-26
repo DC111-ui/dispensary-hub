@@ -6,6 +6,7 @@ import { SectionHeading } from "@/components/shared/section-heading";
 import { Button } from "@/components/ui/button";
 import { FeatureCategoryCard } from "@/components/features/feature-category-card";
 import { FEATURE_CATEGORIES, HOME_FEATURED_ORDER } from "@/lib/constants/features";
+import { LazyRevealGroup, LazyRevealItem } from "@/components/motion/lazy-reveal";
 
 function FeatureHighlights() {
   const featured = FEATURE_CATEGORIES
@@ -17,9 +18,9 @@ function FeatureHighlights() {
       <Container className="flex flex-col gap-10">
         <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
           <SectionHeading
-            eyebrow="Everything in one place"
-            title="Everything you need, in one place"
-            description="From ringing up a sale to managing your stock, LeafLedger handles it all."
+            eyebrow="A closer look"
+            title="The parts you'll use every day"
+            description="A quick look at the core of LeafLedger. The full list covers a lot more."
           />
           <Link href="/features" className="shrink-0">
             <Button variant="outline">
@@ -29,11 +30,13 @@ function FeatureHighlights() {
           </Link>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <LazyRevealGroup className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {featured.map((category) => (
-            <FeatureCategoryCard key={category.id} category={category} />
+            <LazyRevealItem key={category.id}>
+              <FeatureCategoryCard category={category} />
+            </LazyRevealItem>
           ))}
-        </div>
+        </LazyRevealGroup>
       </Container>
     </section>
   );

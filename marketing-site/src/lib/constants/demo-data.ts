@@ -7,8 +7,8 @@
 export const DEMO_BUSINESS = "Discreet420";
 
 export const DEMO_STORES = [
-  { id: "cpt", name: "Discreet420 — Cape Town CBD" },
-  { id: "jhb", name: "Discreet420 — Sandton, Johannesburg" },
+  { id: "cpt", name: "Discreet420, Cape Town CBD" },
+  { id: "jhb", name: "Discreet420, Sandton, Johannesburg" },
 ];
 
 export const DEMO_STAFF = {

@@ -1,18 +1,18 @@
 import Link from "next/link";
-import { Leaf } from "lucide-react";
+import { Leaf, Sparkles } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/shared/container";
 import { MobileNav } from "@/components/layout/mobile-nav";
 import { FeaturesNavMenu } from "@/components/layout/features-nav-menu";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
-import { NAV_LINKS, NAV_CTA } from "@/lib/constants/nav";
+import { NAV_LINKS, NAV_GUIDE_CTA, NAV_SIGN_IN } from "@/lib/constants/nav";
 
 function SiteHeader() {
   return (
-    <header className="border-border bg-background/80 sticky top-0 z-40 w-full border-b backdrop-blur-sm">
-      <Container className="flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 font-semibold">
+    <header className="sticky top-0 z-40 w-full border-b border-transparent bg-transparent backdrop-blur-md">
+      <Container className="flex h-16 max-w-7xl items-center gap-8">
+        <Link href="/" className="mr-4 flex shrink-0 items-center gap-2 font-semibold">
           <span className="bg-primary text-primary-foreground flex size-8 items-center justify-center rounded-md">
             <Leaf className="size-4.5" />
           </span>
@@ -35,10 +35,16 @@ function SiteHeader() {
           )}
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="ml-auto flex items-center gap-3">
           <ThemeToggle />
-          <Link href={NAV_CTA.href} className="hidden md:block">
-            <Button>{NAV_CTA.label}</Button>
+          <Link href={NAV_SIGN_IN.href} className="hidden md:block">
+            <Button variant="secondary">{NAV_SIGN_IN.label}</Button>
+          </Link>
+          <Link href={NAV_GUIDE_CTA.href} className="hidden md:block">
+            <Button>
+              <Sparkles className="size-4" />
+              {NAV_GUIDE_CTA.label}
+            </Button>
           </Link>
           <MobileNav />
         </div>

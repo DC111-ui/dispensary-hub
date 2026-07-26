@@ -20,7 +20,7 @@ function InventoryMockup() {
       <div className="flex h-full flex-col gap-4">
         <div className="flex items-start justify-between">
           <div>
-            <p className="text-sm font-semibold">Blue Dream 3.5g — Batch BD-0472</p>
+            <p className="text-sm font-semibold">Blue Dream 3.5g, Batch BD-0472</p>
             <p className="text-muted-foreground text-xs">Cape Canna Farms (Pty) Ltd</p>
           </div>
           <span className="bg-accent text-accent-foreground rounded-full px-2.5 py-1 text-[10px] font-medium">

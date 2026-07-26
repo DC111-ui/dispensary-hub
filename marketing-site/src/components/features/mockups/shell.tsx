@@ -52,7 +52,7 @@ function BrowserChrome({ path }: { path: string }) {
         <span className="size-2.5 rounded-full bg-[#28c840]" />
       </div>
       <div className="bg-background border-border text-muted-foreground flex-1 truncate rounded-md border px-3 py-1 text-xs">
-        app.leafledger.co/{path}
+        app.leafledger.co.za/{path}
       </div>
     </div>
   );
@@ -117,12 +117,12 @@ function DesktopFrame({
 
         <div className="flex min-w-0 flex-1 flex-col">
           <div className="border-border flex items-center justify-between gap-3 border-b px-4 py-2.5 sm:px-6">
-            <span className="text-muted-foreground truncate text-xs font-medium">{store}</span>
-            <div className="flex items-center gap-2">
-              <span className="border-border bg-background text-muted-foreground rounded-full border px-2.5 py-1 text-[10px]">
+            <span className="text-muted-foreground min-w-0 flex-1 truncate text-xs font-medium">{store}</span>
+            <div className="flex shrink-0 items-center gap-2">
+              <span className="border-border bg-background text-muted-foreground hidden rounded-full border px-2.5 py-1 text-[10px] whitespace-nowrap sm:inline-block">
                 {staffName}
               </span>
-              <span className="bg-accent text-accent-foreground flex size-6 items-center justify-center rounded-full text-[10px] font-semibold">
+              <span className="bg-accent text-accent-foreground flex size-6 shrink-0 items-center justify-center rounded-full text-[10px] font-semibold">
                 {staffInitials}
               </span>
             </div>

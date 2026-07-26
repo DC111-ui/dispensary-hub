@@ -10,14 +10,14 @@ function OnlineStoreMockup() {
     <div className="border-border bg-card overflow-hidden rounded-2xl border shadow-xl">
       <BrowserChrome path="shop.leafledger.co/discreet420" />
       <div className="h-[640px] overflow-y-auto p-4 sm:h-[460px] sm:p-6">
-        <div className="mb-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
+        <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
+          <div className="flex shrink-0 items-center gap-2">
             <span className="bg-primary text-primary-foreground flex size-7 items-center justify-center rounded-md">
               <Leaf className="size-3.5" />
             </span>
             <span className="text-sm font-semibold">{DEMO_BUSINESS}</span>
           </div>
-          <span className="border-border text-muted-foreground rounded-full border px-3 py-1 text-[10px] font-medium">
+          <span className="border-border text-muted-foreground rounded-full border px-3 py-1 text-[10px] font-medium whitespace-nowrap">
             Cape Town CBD · Reserve for pickup
           </span>
         </div>

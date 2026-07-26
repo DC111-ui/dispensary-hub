@@ -10,7 +10,7 @@ function SiteFooter() {
   const copyrightRange = currentYear > 2024 ? `2024–${currentYear}` : "2024";
 
   return (
-    <footer className="border-border bg-secondary/40 border-t">
+    <footer className="border-border bg-secondary/40 border-t pb-20 md:pb-0">
       <Container className="flex flex-col gap-8 py-12 sm:flex-row sm:items-start sm:justify-between">
         <div className="flex flex-col gap-3">
           <Link href="/" className="flex items-center gap-2 font-semibold">
