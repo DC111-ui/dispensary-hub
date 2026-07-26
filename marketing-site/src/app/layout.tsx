@@ -19,7 +19,7 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-const DEFAULT_TITLE = "LeafLedger: Run Your Whole Store From One Place";
+const DEFAULT_TITLE = "LeafLedger | Cannabis retail software";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
