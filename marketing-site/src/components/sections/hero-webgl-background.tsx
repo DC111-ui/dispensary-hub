@@ -191,17 +191,29 @@ function HeroWebglBackground() {
     }
     window.addEventListener("pointermove", onPointerMove);
 
-    let visible = true;
+    let tabVisible = true;
     function onVisibility() {
-      visible = document.visibilityState === "visible";
+      tabVisible = document.visibilityState === "visible";
     }
     document.addEventListener("visibilitychange", onVisibility);
+
+    // Scrolling the hero out of view shouldn't leave this rAF loop running
+    // for the rest of the page — it's a decorative background, not worth
+    // the continuous GPU/main-thread cost once it's off-screen.
+    let inView = true;
+    const inViewObserver = new IntersectionObserver(
+      ([entry]) => {
+        inView = entry.isIntersecting;
+      },
+      { threshold: 0 }
+    );
+    inViewObserver.observe(container);
 
     let raf = 0;
     const start = performance.now();
     function update(now: number) {
       raf = requestAnimationFrame(update);
-      if (!visible) return;
+      if (!tabVisible || !inView) return;
       program.uniforms.uTime.value = (now - start) * 0.001;
       const cur = program.uniforms.uMouse.value as number[];
       cur[0] += (mouseTarget[0] - cur[0]) * 0.04;
@@ -213,6 +225,7 @@ function HeroWebglBackground() {
     return () => {
       cancelAnimationFrame(raf);
       resizeObserver.disconnect();
+      inViewObserver.disconnect();
       window.removeEventListener("pointermove", onPointerMove);
       document.removeEventListener("visibilitychange", onVisibility);
       container?.removeChild(gl.canvas);
