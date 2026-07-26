@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { Container } from "@/components/shared/container";
 import { SectionHeading } from "@/components/shared/section-heading";
+import { PageRibbon } from "@/components/shared/page-ribbon";
 import { PricingCard } from "@/components/pricing/pricing-card";
 import { AddonsList } from "@/components/pricing/addons-list";
 import { PricingFaq } from "@/components/pricing/pricing-faq";
@@ -55,20 +56,18 @@ export default function PricingPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(OFFERS_JSON_LD) }}
       />
-      <section className="py-16 sm:py-20">
+      <section className="bg-page-tint relative isolate overflow-hidden pt-16 pb-20 sm:pt-20 sm:pb-24">
+        <PageRibbon className="top-[55%] right-[-30%]" />
         <Container>
           <SectionHeading
             eyebrow="Pricing"
             title="Plans that grow with your store count"
+            titleClassName="text-4xl sm:text-5xl lg:text-6xl font-bold"
             description="Every plan includes the full platform. Bigger plans support more stores and extra features. All plans are billed annually, and every plan starts with a free demo."
-            align="center"
-            className="mx-auto"
+            className="max-w-2xl"
           />
         </Container>
-      </section>
-
-      <section className="pb-16 sm:pb-20">
-        <Container>
+        <Container className="relative mt-12">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {PRICING_TIERS.map((tier) => (
               <PricingCard key={tier.id} tier={tier} />

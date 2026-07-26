@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight, Check } from "lucide-react";
 
 import { Container } from "@/components/shared/container";
 import { SectionHeading } from "@/components/shared/section-heading";
+import { PageHeaderGlow } from "@/components/shared/page-header-glow";
 import { Button } from "@/components/ui/button";
 import { FeatureVisual } from "@/components/features/feature-visual";
 import { FEATURE_CATEGORIES } from "@/lib/constants/features";
@@ -53,7 +54,8 @@ export default async function FeatureDetailPage({
         </Container>
       </section>
 
-      <section className="py-10 sm:py-14">
+      <section className="relative isolate overflow-hidden py-10 sm:py-14">
+        <PageHeaderGlow />
         <Container>
           <SectionHeading
             eyebrow="Features"

@@ -24,9 +24,9 @@ export default function CompliancePage() {
           <SectionHeading
             eyebrow="Compliance"
             title="Built to make inspections easy"
+            titleClassName="text-4xl sm:text-5xl font-bold"
             description="Your business runs on paperwork and records. LeafLedger keeps track of everything automatically, from the moment stock arrives to the moment it's sold."
-            align="center"
-            className="mx-auto"
+            className="max-w-2xl"
           />
         </Container>
       </section>

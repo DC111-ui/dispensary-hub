@@ -45,14 +45,14 @@ const CLUB_CHECKLIST = [
 export default function AboutPage() {
   return (
     <>
-      <section className="py-16 sm:py-20">
+      <section className="bg-page-tint py-16 sm:py-20">
         <Container>
           <SectionHeading
             eyebrow="Our story"
             title="Why we built LeafLedger"
+            titleClassName="text-4xl sm:text-5xl font-bold"
             description="A short history of how cannabis retail in South Africa got here, and how we help stores and clubs run responsibly within it."
-            align="center"
-            className="mx-auto"
+            className="max-w-2xl"
           />
         </Container>
       </section>
