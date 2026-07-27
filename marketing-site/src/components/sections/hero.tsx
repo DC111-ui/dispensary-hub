@@ -13,8 +13,13 @@ function Hero() {
 
       <Container className="relative grid gap-12 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:py-28">
         <div className="flex flex-col gap-6">
-          <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
-            Run it wrong, and SAPS can shut your club down.
+          <h1 className="flex flex-col gap-1 tracking-tight">
+            <span className="text-muted-foreground text-2xl font-medium sm:text-3xl lg:text-4xl">
+              Run it wrong, and
+            </span>
+            <span className="text-primary text-4xl font-semibold sm:text-5xl lg:text-6xl">
+              SAPS can shut your club down.
+            </span>
           </h1>
           <p className="text-muted-foreground max-w-xl text-lg">
             Cannabis clubs run under real law, not a grey area. Fail an

@@ -4,48 +4,56 @@
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 :root {
-  --radius: 0.65rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.18 0.02 240);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.18 0.02 240);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.18 0.02 240);
-  --primary: oklch(0.44 0.14 155);
-  --primary-foreground: oklch(0.98 0.01 155);
-  --secondary: oklch(0.96 0.01 240);
-  --secondary-foreground: oklch(0.22 0.02 240);
-  --muted: oklch(0.96 0.01 240);
-  --muted-foreground: oklch(0.5 0.02 240);
-  --accent: oklch(0.94 0.05 155);
-  --accent-foreground: oklch(0.22 0.05 155);
-  --destructive: oklch(0.58 0.22 27);
-  --destructive-foreground: oklch(0.98 0.01 27);
-  --border: oklch(0.9 0.01 240);
-  --input: oklch(0.9 0.01 240);
-  --ring: oklch(0.44 0.14 155);
+  --radius: 0.4rem;
+  --background: oklch(0.98 0.011 87);
+  --foreground: oklch(0.24 0.03 258);
+  --card: oklch(0.995 0.006 87);
+  --card-foreground: oklch(0.24 0.03 258);
+  --popover: oklch(0.995 0.006 87);
+  --popover-foreground: oklch(0.24 0.03 258);
+  /* Stripe's blurple (#635BFF), not our own green — the one deliberate
+     borrow, per direction: keep the ledger/paper system, replace the
+     primary action color so it stops reading as "another cannabis-green
+     SaaS" next to every competitor's default green. */
+  --primary: oklch(0.57 0.25 276);
+  --primary-foreground: oklch(0.98 0.012 276);
+  --secondary: oklch(0.94 0.012 87);
+  --secondary-foreground: oklch(0.26 0.03 258);
+  --muted: oklch(0.94 0.012 87);
+  --muted-foreground: oklch(0.5 0.02 258);
+  --accent: oklch(0.93 0.035 276);
+  --accent-foreground: oklch(0.3 0.08 276);
+  --gold: oklch(0.76 0.13 83);
+  --gold-foreground: oklch(0.28 0.05 83);
+  --destructive: oklch(0.5 0.16 25);
+  --destructive-foreground: oklch(0.98 0.01 25);
+  --border: oklch(0.88 0.014 87);
+  --input: oklch(0.88 0.014 87);
+  --ring: oklch(0.57 0.25 276);
 }
 
 [data-theme="dark"] {
-  --background: oklch(0.16 0.02 240);
-  --foreground: oklch(0.96 0.01 240);
-  --card: oklch(0.2 0.02 240);
-  --card-foreground: oklch(0.96 0.01 240);
-  --popover: oklch(0.2 0.02 240);
-  --popover-foreground: oklch(0.96 0.01 240);
-  --primary: oklch(0.72 0.16 155);
-  --primary-foreground: oklch(0.16 0.03 155);
-  --secondary: oklch(0.26 0.02 240);
-  --secondary-foreground: oklch(0.96 0.01 240);
-  --muted: oklch(0.26 0.02 240);
-  --muted-foreground: oklch(0.66 0.02 240);
-  --accent: oklch(0.3 0.05 155);
-  --accent-foreground: oklch(0.92 0.03 155);
-  --destructive: oklch(0.68 0.2 27);
-  --destructive-foreground: oklch(0.16 0.02 27);
+  --background: oklch(0.19 0.024 258);
+  --foreground: oklch(0.95 0.012 87);
+  --card: oklch(0.23 0.026 258);
+  --card-foreground: oklch(0.95 0.012 87);
+  --popover: oklch(0.23 0.026 258);
+  --popover-foreground: oklch(0.95 0.012 87);
+  --primary: oklch(0.72 0.19 276);
+  --primary-foreground: oklch(0.16 0.03 276);
+  --secondary: oklch(0.28 0.024 258);
+  --secondary-foreground: oklch(0.95 0.012 87);
+  --muted: oklch(0.28 0.024 258);
+  --muted-foreground: oklch(0.68 0.018 87);
+  --accent: oklch(0.32 0.07 276);
+  --accent-foreground: oklch(0.9 0.05 276);
+  --gold: oklch(0.78 0.12 83);
+  --gold-foreground: oklch(0.22 0.04 83);
+  --destructive: oklch(0.62 0.17 25);
+  --destructive-foreground: oklch(0.16 0.02 25);
   --border: oklch(1 0 0 / 12%);
   --input: oklch(1 0 0 / 18%);
-  --ring: oklch(0.72 0.16 155);
+  --ring: oklch(0.72 0.19 276);
 }
 
 @theme inline {
@@ -68,11 +76,14 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-public-sans);
+  --font-display: var(--font-fraunces);
 }
 
 @layer base {
@@ -82,6 +93,12 @@
   body {
     @apply bg-background text-foreground;
     transition: background-color 0.15s ease, color 0.15s ease;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
   }
 }
 
@@ -133,38 +150,38 @@
 .bg-brand-wash {
   background: linear-gradient(
     120deg,
-    hsl(4 85% 82%) 0%,
-    hsl(85 75% 80%) 33%,
-    hsl(145 65% 78%) 66%,
-    hsl(162 65% 79%) 100%
+    hsl(258 30% 88%) 0%,
+    hsl(246 32% 87%) 45%,
+    hsl(276 38% 85%) 75%,
+    hsl(83 40% 84%) 100%
   );
 }
 [data-theme="dark"] .bg-brand-wash {
   background: linear-gradient(
     120deg,
-    hsl(4 55% 26%) 0%,
-    hsl(85 50% 24%) 33%,
-    hsl(145 45% 24%) 66%,
-    hsl(162 45% 25%) 100%
+    hsl(258 28% 22%) 0%,
+    hsl(246 30% 22%) 45%,
+    hsl(276 34% 23%) 75%,
+    hsl(83 30% 22%) 100%
   );
 }
 
 .bg-brand-glow {
   background: linear-gradient(
     120deg,
-    hsl(4 85% 70%) 0%,
-    hsl(85 75% 68%) 33%,
-    hsl(145 65% 62%) 66%,
-    hsl(162 65% 64%) 100%
+    hsl(258 45% 55%) 0%,
+    hsl(246 48% 56%) 45%,
+    hsl(276 60% 60%) 75%,
+    hsl(83 55% 55%) 100%
   );
 }
 [data-theme="dark"] .bg-brand-glow {
   background: linear-gradient(
     120deg,
-    hsl(4 75% 55%) 0%,
-    hsl(85 65% 50%) 33%,
-    hsl(145 60% 45%) 66%,
-    hsl(162 60% 48%) 100%
+    hsl(258 40% 40%) 0%,
+    hsl(246 42% 42%) 45%,
+    hsl(276 50% 46%) 75%,
+    hsl(83 45% 42%) 100%
   );
 }
 
@@ -181,12 +198,12 @@
 .brand-ribbon {
   background: linear-gradient(
     100deg,
-    hsl(4 90% 62%) 0%,
-    hsl(35 90% 60%) 20%,
-    hsl(85 75% 58%) 40%,
-    hsl(150 65% 52%) 60%,
-    hsl(165 60% 52%) 80%,
-    hsl(4 90% 62%) 100%
+    hsl(258 42% 46%) 0%,
+    hsl(246 45% 52%) 20%,
+    hsl(276 55% 56%) 40%,
+    hsl(230 40% 48%) 60%,
+    hsl(83 50% 48%) 80%,
+    hsl(258 42% 46%) 100%
   );
 }
 

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Fraunces, Public_Sans } from "next/font/google";
 import "./globals.css";
 
 import { SiteHeader } from "@/components/layout/site-header";
@@ -14,8 +14,14 @@ import {
   SITE_URL,
 } from "@/lib/constants/site";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+  axes: ["opsz"],
+});
+
+const publicSans = Public_Sans({
+  variable: "--font-public-sans",
   subsets: ["latin"],
 });
 
@@ -68,7 +74,7 @@ export default function RootLayout({
       lang="en"
       data-theme="light"
       suppressHydrationWarning
-      className={`${geistSans.variable} h-full antialiased`}
+      className={`${fraunces.variable} ${publicSans.variable} h-full antialiased`}
     >
       <head>
         <script

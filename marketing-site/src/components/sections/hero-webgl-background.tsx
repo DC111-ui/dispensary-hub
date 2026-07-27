@@ -74,8 +74,8 @@ const FRAGMENT = /* glsl */ `
     vec2 p = uv * aspect;
 
     // Organic domain warp — the flowing "silk" motion — perturbing a single
-    // continuous diagonal sweep, not independent blobs. Full-frame coverage,
-    // no dark base: every pixel is always a live blend of the four colors,
+    // continuous diagonal sweep, not independent blobs. Full-frame coverage:
+    // every pixel is always a live blend of the ink/indigo/gold ramp,
     // matching the reference's smooth streaked-silk shape instead of patchy
     // separated pools.
     float t = uTime * 0.045;
@@ -106,9 +106,10 @@ const FRAGMENT = /* glsl */ `
     float glowDrift = smoothstep(0.5, 0.0, distDrift) * 0.12;
     color += glowDrift * uColor3;
 
-    // Maximum-vibrancy saturation punch.
+    // Gentle saturation lift — enough to keep the ink/moss/gold hues rich
+    // without pushing the low-saturation navy into an odd neon cast.
     float luma = dot(color, vec3(0.299, 0.587, 0.114));
-    color = mix(vec3(luma), color, 1.55);
+    color = mix(vec3(luma), color, 1.12);
     color = clamp(color, 0.0, 1.0);
 
     float dither = (fract(sin(dot(uv * uResolution.xy, vec2(12.9898, 78.233))) * 43758.5453) - 0.5) / 255.0;
@@ -118,12 +119,14 @@ const FRAGMENT = /* glsl */ `
   }
 `;
 
-// Variant A palette (rust -> chartreuse -> green -> teal-green) at maximum saturation
-// for a bold, energetic feel rather than pastel.
-const COLOR_1: [number, number, number] = [0.978, 0.18, 0.123];
-const COLOR_2: [number, number, number] = [0.575, 0.95, 0.05];
-const COLOR_3: [number, number, number] = [0.063, 0.777, 0.361];
-const COLOR_4: [number, number, number] = [0.084, 0.756, 0.554];
+// Ledger palette: ink navy sweeping through Stripe-blurple indigo, with a
+// single warm gold glint at the tail — no green anywhere, so the hero reads
+// as "one lit surface" rather than a gradient blob, and doesn't default to
+// the cannabis-green every competitor in this category already uses.
+const COLOR_1: [number, number, number] = [0.086, 0.086, 0.184];
+const COLOR_2: [number, number, number] = [0.153, 0.129, 0.376];
+const COLOR_3: [number, number, number] = [0.388, 0.357, 1.0];
+const COLOR_4: [number, number, number] = [0.671, 0.522, 0.216];
 
 function HeroWebglBackground() {
   const containerRef = React.useRef<HTMLDivElement>(null);

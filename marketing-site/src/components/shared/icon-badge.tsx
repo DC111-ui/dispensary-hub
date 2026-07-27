@@ -5,13 +5,14 @@ import { cn } from "@/lib/utils";
 
 type IconTone = "rust" | "chartreuse" | "green" | "teal";
 
-const TONE_CLASSES: Record<IconTone, string> = {
-  rust: "bg-[hsl(4_70%_92%)] text-[hsl(4_65%_32%)] dark:bg-[hsl(4_35%_22%)] dark:text-[hsl(4_70%_82%)]",
-  chartreuse:
-    "bg-[hsl(85_60%_90%)] text-[hsl(85_45%_26%)] dark:bg-[hsl(85_30%_20%)] dark:text-[hsl(85_60%_78%)]",
-  green:
-    "bg-[hsl(145_50%_90%)] text-[hsl(145_45%_26%)] dark:bg-[hsl(145_30%_20%)] dark:text-[hsl(145_55%_78%)]",
-  teal: "bg-[hsl(162_50%_90%)] text-[hsl(162_45%_26%)] dark:bg-[hsl(162_30%_20%)] dark:text-[hsl(162_55%_78%)]",
+// A small "sealing wax" dot in the corner carries the tone instead of a
+// pastel-filled background — the badge itself stays ink-on-paper, like a
+// stamped record, and the dot is the only per-category color signal.
+const TONE_DOT_CLASSES: Record<IconTone, string> = {
+  rust: "bg-[oklch(0.55_0.15_35)]",
+  chartreuse: "bg-gold",
+  green: "bg-primary",
+  teal: "bg-[oklch(0.58_0.09_210)]",
 };
 
 function IconBadge({
@@ -26,12 +27,20 @@ function IconBadge({
   return (
     <div
       className={cn(
-        "flex size-11 shrink-0 items-center justify-center rounded-lg",
-        tone ? TONE_CLASSES[tone] : "bg-accent text-accent-foreground",
+        "border-foreground/15 bg-card text-foreground/80 relative flex size-11 shrink-0 items-center justify-center rounded-md border",
         className
       )}
     >
-      <Icon className="size-5" />
+      <Icon className="size-5" strokeWidth={1.75} />
+      {tone ? (
+        <span
+          className={cn(
+            "ring-background absolute -top-1 -right-1 size-2.5 rounded-full ring-2",
+            TONE_DOT_CLASSES[tone]
+          )}
+          aria-hidden="true"
+        />
+      ) : null}
     </div>
   );
 }

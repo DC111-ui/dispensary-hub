@@ -10,7 +10,7 @@ const HeroWebglBackground = dynamic(
 );
 
 const GRADIENT =
-  "linear-gradient(125deg, hsl(4 65% 62%) 0%, hsl(85 55% 62%) 33%, hsl(145 55% 46%) 66%, hsl(162 50% 50%) 100%)";
+  "linear-gradient(125deg, hsl(258 35% 20%) 0%, hsl(250 40% 30%) 33%, hsl(245 75% 55%) 66%, hsl(83 45% 45%) 100%)";
 
 const GRAIN_IMAGE =
   "repeating-linear-gradient(115deg, rgba(255,255,255,0.14) 0px, rgba(255,255,255,0.14) 1px, rgba(0,0,0,0.08) 2px, rgba(0,0,0,0.08) 3px, transparent 4px, transparent 7px)";

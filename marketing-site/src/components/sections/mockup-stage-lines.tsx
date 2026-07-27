@@ -33,7 +33,7 @@ function MockupStageLines({ sectionRef }: { sectionRef: React.RefObject<HTMLElem
       <motion.div
         className="absolute -top-[20%] -right-[15%] h-[110%] w-[70%] origin-top-right"
         style={{
-          backgroundImage: LINE_PATTERN("hsl(145 55% 42% / 0.55)"),
+          backgroundImage: LINE_PATTERN("hsl(258 45% 45% / 0.55)"),
           backgroundSize: sizeA,
           rotate: rotateA,
           clipPath: "polygon(100% 0%, 100% 100%, 15% 0%)",

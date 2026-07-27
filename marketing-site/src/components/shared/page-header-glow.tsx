@@ -1,5 +1,5 @@
 const GRADIENT =
-  "radial-gradient(circle, hsl(85 60% 70%) 0%, hsl(150 55% 58%) 42%, hsl(165 50% 55%) 68%, transparent 88%)";
+  "radial-gradient(circle, hsl(83 55% 68%) 0%, hsl(258 50% 58%) 42%, hsl(276 55% 58%) 68%, transparent 88%)";
 
 const GRAIN_IMAGE =
   "repeating-linear-gradient(115deg, rgba(255,255,255,0.14) 0px, rgba(255,255,255,0.14) 1px, rgba(0,0,0,0.08) 2px, rgba(0,0,0,0.08) 3px, transparent 4px, transparent 7px)";

@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { Leaf } from "lucide-react";
 
 import { Container } from "@/components/shared/container";
+import { BrandMark } from "@/components/shared/brand-mark";
 import { FOOTER_LINKS } from "@/lib/constants/nav";
 import { BUSINESS_LOCALITY, BUSINESS_COUNTRY, CONTACT_EMAIL } from "@/lib/constants/site";
 
@@ -14,9 +14,7 @@ function SiteFooter() {
       <Container className="flex flex-col gap-8 py-12 sm:flex-row sm:items-start sm:justify-between">
         <div className="flex flex-col gap-3">
           <Link href="/" className="flex items-center gap-2 font-semibold">
-            <span className="bg-primary text-primary-foreground flex size-8 items-center justify-center rounded-md">
-              <Leaf className="size-4.5" />
-            </span>
+            <BrandMark />
             <span className="text-lg">LeafLedger</span>
           </Link>
           <p className="text-muted-foreground max-w-sm text-sm">

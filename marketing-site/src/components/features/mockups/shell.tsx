@@ -45,15 +45,19 @@ const NAV_ITEMS: { id: NavId; label: string; icon: LucideIcon }[] = [
 
 function BrowserChrome({ path }: { path: string }) {
   return (
-    <div className="bg-muted/60 border-border hidden items-center gap-3 border-b px-4 py-2.5 sm:flex">
-      <div className="flex gap-1.5">
-        <span className="size-2.5 rounded-full bg-[#ff5f57]" />
-        <span className="size-2.5 rounded-full bg-[#febc2e]" />
-        <span className="size-2.5 rounded-full bg-[#28c840]" />
+    <div className="bg-muted/60 border-border hidden items-center justify-between gap-3 border-b px-4 py-2.5 sm:flex">
+      <div className="flex min-w-0 items-center gap-2">
+        <span className="border-foreground/25 text-muted-foreground shrink-0 rounded-sm border px-1.5 py-0.5 font-mono text-[9px] font-semibold tracking-wide uppercase">
+          Record
+        </span>
+        <span className="text-muted-foreground truncate font-mono text-xs">
+          app.leafledger.co.za/{path}
+        </span>
       </div>
-      <div className="bg-background border-border text-muted-foreground flex-1 truncate rounded-md border px-3 py-1 text-xs">
-        app.leafledger.co.za/{path}
-      </div>
+      <span className="text-primary flex shrink-0 items-center gap-1.5 font-mono text-[10px] font-medium tracking-wide uppercase">
+        <span className="bg-primary size-1.5 rounded-full" />
+        Live
+      </span>
     </div>
   );
 }
@@ -137,17 +141,23 @@ function DesktopFrame({
 function PhoneFrame({
   children,
   label = "LeafLedger",
+  header,
 }: {
   children: React.ReactNode;
   label?: string;
+  /** Overrides the default centered-label bar — for mockups (e.g. WhatsApp)
+   *  depicting a third-party app with its own real header chrome. */
+  header?: React.ReactNode;
 }) {
   return (
     <div className="flex justify-center">
       <div className="border-foreground/80 bg-card relative flex h-[520px] w-[min(280px,85vw)] flex-col overflow-hidden rounded-[2.5rem] border-[6px] shadow-xl">
         <div className="bg-foreground/80 absolute top-0 left-1/2 z-10 h-5 w-28 -translate-x-1/2 rounded-b-2xl" />
-        <div className="border-border flex items-center justify-center border-b px-4 pt-7 pb-2.5">
-          <span className="text-xs font-semibold">{label}</span>
-        </div>
+        {header ?? (
+          <div className="border-border flex items-center justify-center border-b px-4 pt-7 pb-2.5">
+            <span className="text-xs font-semibold">{label}</span>
+          </div>
+        )}
         <div className="flex-1 overflow-y-auto">{children}</div>
       </div>
     </div>

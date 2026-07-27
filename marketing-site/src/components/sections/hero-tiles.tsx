@@ -20,8 +20,8 @@ function FloatingTile({ icon: Icon, label }: { icon: LucideIcon; label: string }
       whileTap={reduce ? undefined : { scale: 0.98 }}
       className="border-border/60 bg-card/70 flex cursor-default flex-col items-start gap-3 rounded-xl border p-5 backdrop-blur-md"
     >
-      <span className="bg-accent text-accent-foreground flex size-9 items-center justify-center rounded-lg">
-        <Icon className="size-4.5" />
+      <span className="border-foreground/15 bg-card text-foreground/80 flex size-9 items-center justify-center rounded-md border">
+        <Icon className="size-4.5" strokeWidth={1.75} />
       </span>
       <span className="text-sm font-medium">{label}</span>
     </motion.div>

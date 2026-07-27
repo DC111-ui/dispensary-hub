@@ -23,25 +23,21 @@ export default function OpengraphImage() {
               width: 72,
               height: 72,
               borderRadius: 16,
-              background: "#1F6D45",
+              background: "#635BFF",
               display: "flex",
-              alignItems: "center",
+              flexDirection: "column",
+              alignItems: "flex-start",
               justifyContent: "center",
+              gap: 6,
+              padding: "0 16px",
             }}
           >
-            <svg
-              width="40"
-              height="40"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#FFFFFF"
-              strokeWidth={2}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
-              <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
-            </svg>
+            <div style={{ width: 16, height: 5, borderRadius: 3, background: "#FFFFFF" }} />
+            <div style={{ width: 26, height: 5, borderRadius: 3, background: "#FFFFFF" }} />
+            <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+              <div style={{ width: 36, height: 5, borderRadius: 3, background: "#FFFFFF" }} />
+              <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#C99A3E" }} />
+            </div>
           </div>
           <span style={{ fontSize: 40, fontWeight: 700, color: "#1A1D1B" }}>
             LeafLedger
