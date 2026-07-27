@@ -6,10 +6,13 @@ function buildMetadata({
   title,
   description,
   path = "/",
+  canonicalPath,
 }: {
   title: string;
   description: string;
   path?: string;
+  /** Use when this URL's content is a subset of another page's — points search engines at the authoritative page instead of this one. */
+  canonicalPath?: string;
 }): Metadata {
   const url = `${SITE_URL}${path}`;
   const socialTitle = path === "/" ? title : `${title} | ${SITE_NAME}`;
@@ -17,7 +20,7 @@ function buildMetadata({
   return {
     title,
     description,
-    alternates: { canonical: path },
+    alternates: { canonical: canonicalPath ?? path },
     openGraph: {
       title: socialTitle,
       description,

@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { FeatureVisual } from "@/components/features/feature-visual";
 import { FEATURE_CATEGORIES } from "@/lib/constants/features";
 import { buildMetadata } from "@/lib/seo";
+import { SITE_URL } from "@/lib/constants/site";
 
 export function generateStaticParams() {
   return FEATURE_CATEGORIES.map((category) => ({ slug: category.id }));
@@ -28,6 +29,10 @@ export async function generateMetadata({
     title: category.title,
     description: category.overview,
     path: `/features/${slug}`,
+    // The compliance catalog entry covers the same ground as the dedicated
+    // /compliance landing page — canonicalize to it instead of splitting
+    // ranking signal across two near-duplicate pages.
+    canonicalPath: slug === "compliance" ? "/compliance" : undefined,
   });
 }
 
@@ -40,8 +45,27 @@ export default async function FeatureDetailPage({
   const category = FEATURE_CATEGORIES.find((item) => item.id === slug);
   if (!category) notFound();
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "Features", item: `${SITE_URL}/features` },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: category.title,
+        item: `${SITE_URL}/features/${slug}`,
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <section className="pt-10">
         <Container>
           <Link
@@ -58,6 +82,7 @@ export default async function FeatureDetailPage({
         <PageHeaderGlow />
         <Container>
           <SectionHeading
+            as="h1"
             eyebrow="Features"
             title={category.title}
             description={category.tagline}

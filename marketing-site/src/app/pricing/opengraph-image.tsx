@@ -5,8 +5,8 @@ export const contentType = OG_IMAGE_CONTENT_TYPE;
 
 export default function OpengraphImage() {
   return renderOgImage({
-    title: "Run your whole store from one place",
-    description:
-      "Sales, stock, customers, suppliers, and records ready for any inspection.",
+    eyebrow: "Pricing",
+    title: "Simple, transparent pricing",
+    description: "From a single store to a chain with many branches. Every plan starts with a free demo.",
   });
 }

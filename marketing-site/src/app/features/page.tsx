@@ -21,6 +21,7 @@ export default function FeaturesPage() {
         <PageHeaderGlow />
         <Container>
           <SectionHeading
+            as="h1"
             eyebrow="Features"
             title="Everything your store needs, in one platform"
             description="Everything you do in your store, every day, covered in one place. Pick a feature below for the full picture."

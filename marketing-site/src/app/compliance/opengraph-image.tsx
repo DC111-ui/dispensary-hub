@@ -5,8 +5,8 @@ export const contentType = OG_IMAGE_CONTENT_TYPE;
 
 export default function OpengraphImage() {
   return renderOgImage({
-    title: "Run your whole store from one place",
-    description:
-      "Sales, stock, customers, suppliers, and records ready for any inspection.",
+    eyebrow: "Compliance",
+    title: "Built to make inspections easy",
+    description: "See how LeafLedger keeps your records ready for any inspection.",
   });
 }

@@ -17,6 +17,7 @@ export default function GuidePage() {
     <section className="bg-page-tint py-16 sm:py-20">
       <Container>
         <SectionHeading
+          as="h1"
           eyebrow="AI Assistant"
           title="Ask about LeafLedger"
           titleClassName="text-4xl sm:text-5xl font-bold"

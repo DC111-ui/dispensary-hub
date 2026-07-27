@@ -25,7 +25,7 @@ const publicSans = Public_Sans({
   subsets: ["latin"],
 });
 
-const DEFAULT_TITLE = "LeafLedger | Cannabis retail software";
+const DEFAULT_TITLE = "LeafLedger | Cannabis Club Software, South Africa";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

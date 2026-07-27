@@ -16,18 +16,18 @@ const STATIC_ROUTES: { path: string; priority: number }[] = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
-
+  // No lastModified: we have no reliable per-page content-change date, and
+  // stamping every entry with the build time on every deploy is a worse
+  // signal than omitting it (Google treats a lastmod that always matches
+  // crawl/build time as unreliable and may discount it).
   const staticEntries = STATIC_ROUTES.map(({ path, priority }) => ({
     url: `${SITE_URL}${path}`,
-    lastModified: now,
     changeFrequency: "monthly" as const,
     priority,
   }));
 
   const featureEntries = FEATURE_CATEGORIES.map((category) => ({
     url: `${SITE_URL}/features/${category.id}`,
-    lastModified: now,
     changeFrequency: "monthly" as const,
     priority: 0.6,
   }));

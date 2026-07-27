@@ -1,7 +1,7 @@
 export const SITE_URL = "https://leafledger.co.za";
 export const SITE_NAME = "LeafLedger";
 export const SITE_DESCRIPTION =
-  "LeafLedger is one simple system for sales, stock, customers, suppliers, and keeping your records ready for any inspection.";
+  "LeafLedger is one simple system for South African cannabis clubs: sales, stock, customers, suppliers, and keeping your records ready for any inspection.";
 
 export const CONTACT_EMAIL = "info@leafledger.co.za";
 export const BUSINESS_LOCALITY = "Pretoria";

@@ -60,6 +60,7 @@ export default function PricingPage() {
         <PageRibbon className="top-[55%] right-[-30%]" />
         <Container>
           <SectionHeading
+            as="h1"
             eyebrow="Pricing"
             title="Plans that grow with your store count"
             titleClassName="text-4xl sm:text-5xl lg:text-6xl font-bold"

@@ -48,6 +48,7 @@ export default function AboutPage() {
       <section className="bg-page-tint py-16 sm:py-20">
         <Container>
           <SectionHeading
+            as="h1"
             eyebrow="Our story"
             title="Why we built LeafLedger"
             titleClassName="text-4xl sm:text-5xl font-bold"
