@@ -10,7 +10,7 @@ export const NAV_LINKS: NavLink[] = [
   { label: "Pricing", href: "/pricing" },
 ];
 
-export const NAV_CTA: NavLink = { label: "Get a Free Demo", href: "/contact" };
+export const NAV_CTA: NavLink = { label: "Book a free demo", href: "/contact" };
 
 /** Desktop nav strip only — mirrors Stripe's own nav: plain links, a divider, then
  *  Guide me, then the sign-in + primary-CTA button cluster at the end of the bar. */

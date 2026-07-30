@@ -128,22 +128,29 @@
   animation: accordion-up 0.2s ease-out;
 }
 
-@keyframes hero-gradient-drift {
-  0%,
-  100% {
-    filter: hue-rotate(0deg);
-  }
-  50% {
-    filter: hue-rotate(4deg);
-  }
+/* Hero background band: a short, full-width strip pinned to the very top on
+   mobile (clears the body copy below it), widening into the original tall
+   top-right band — tucked behind the nav strip and the HeroTiles panel — at
+   `lg` and above. See hero-atmosphere.tsx for why this needs a real shape
+   change per breakpoint rather than a scaled clamp. */
+.hero-atmosphere-shape {
+  position: absolute;
+  inset-inline: 0;
+  top: -8%;
+  height: 38%;
+  -webkit-mask-image: radial-gradient(ellipse 130% 100% at 50% 0%, black 0%, rgba(0, 0, 0, 0.75) 45%, transparent 82%);
+  mask-image: radial-gradient(ellipse 130% 100% at 50% 0%, black 0%, rgba(0, 0, 0, 0.75) 45%, transparent 82%);
 }
 
-@keyframes hero-grain-shift {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 140px 90px;
+@media (min-width: 1024px) {
+  .hero-atmosphere-shape {
+    inset-inline: auto;
+    right: 0;
+    top: -35%;
+    height: 165%;
+    width: 70%;
+    -webkit-mask-image: radial-gradient(ellipse 85% 80% at 66% 4%, black 0%, rgba(0, 0, 0, 0.85) 42%, transparent 80%);
+    mask-image: radial-gradient(ellipse 85% 80% at 66% 4%, black 0%, rgba(0, 0, 0, 0.85) 42%, transparent 80%);
   }
 }
 
