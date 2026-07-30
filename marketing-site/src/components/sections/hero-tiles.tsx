@@ -41,7 +41,7 @@ function FloatingTile({
 
 function HeroTiles() {
   return (
-    <div className="border-border/60 bg-card/40 mt-10 grid grid-cols-2 gap-4 rounded-2xl border p-6 shadow-xl backdrop-blur-md sm:max-w-md">
+    <div className="border-border/60 bg-card/40 mt-10 grid grid-cols-2 gap-4 rounded-2xl border p-6 shadow-xl backdrop-blur-md sm:max-w-3xl sm:grid-cols-4">
       {HERO_TILES.map(({ icon, label, tone }) => (
         <FloatingTile key={label} icon={icon} label={label} tone={tone} />
       ))}

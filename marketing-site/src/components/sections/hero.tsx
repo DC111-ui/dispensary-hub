@@ -12,7 +12,7 @@ import { useSafeReducedMotion } from "@/components/motion/use-safe-reduced-motio
 
 const STAGGER_CONTAINER = {
   hidden: {},
-  show: { transition: { staggerChildren: 0.045, delayChildren: 0.02 } },
+  show: { transition: { staggerChildren: 0.03, delayChildren: 0.01 } },
 };
 
 const STAGGER_ITEM = {
@@ -20,7 +20,7 @@ const STAGGER_ITEM = {
   show: {
     opacity: 1,
     y: 0,
-    transition: { type: "spring" as const, stiffness: 420, damping: 30, mass: 0.6 },
+    transition: { type: "spring" as const, stiffness: 520, damping: 32, mass: 0.5 },
   },
 };
 

@@ -34,7 +34,7 @@ const FRAGMENT = /* glsl */ `
   float ribbon(vec2 p, float spacing, float phase, float xScale, float amp, float width) {
     float py = fract((p.y + phase * spacing) / spacing + 0.5) - 0.5;
     py *= spacing;
-    float wave = py + sin((p.x + uTime * 0.075) * xScale + phase * 5.0) * amp;
+    float wave = py + sin((p.x + uTime * 0.11) * xScale + phase * 5.0) * amp;
     return exp(-(wave * wave) / (2.0 * width * width));
   }
 
@@ -52,11 +52,13 @@ const FRAGMENT = /* glsl */ `
   }
 `;
 
-// Ledger palette: ink navy as the base band, Stripe-blurple purple (the same
-// value used for --primary elsewhere) and the olive-green already used at the
-// tail of .bg-brand-glow / .brand-ribbon — so the shader draws from the same
-// two brand hues as the rest of the site instead of inventing new ones.
-const COLOR_INK: [number, number, number] = [0.086, 0.086, 0.184];
+// Ledger palette: a bright violet base (the exact light-theme value of
+// .bg-brand-glow's first stop, hsl(258 45% 55%) — not an arbitrary near-black)
+// under the same Stripe-blurple purple used for --primary and the olive-green
+// already used at the tail of .bg-brand-glow / .brand-ribbon, so the shader
+// draws entirely from brand hues instead of inventing new ones or defaulting
+// to black.
+const COLOR_INK: [number, number, number] = [0.469, 0.348, 0.753];
 const COLOR_PURPLE: [number, number, number] = [0.46, 0.4, 1.0];
 const COLOR_GREEN: [number, number, number] = [0.62, 0.88, 0.22];
 
