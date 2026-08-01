@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Public_Sans } from "next/font/google";
+import { Public_Sans } from "next/font/google";
 import "./globals.css";
 
 import { SiteHeader } from "@/components/layout/site-header";
@@ -13,12 +13,6 @@ import {
   SITE_NAME,
   SITE_URL,
 } from "@/lib/constants/site";
-
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
-  subsets: ["latin"],
-  axes: ["opsz"],
-});
 
 const publicSans = Public_Sans({
   variable: "--font-public-sans",
@@ -74,7 +68,7 @@ export default function RootLayout({
       lang="en"
       data-theme="light"
       suppressHydrationWarning
-      className={`${fraunces.variable} ${publicSans.variable} h-full antialiased`}
+      className={`${publicSans.variable} h-full antialiased`}
     >
       <head>
         <script

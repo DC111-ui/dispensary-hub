@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 
 import { Container } from "@/components/shared/container";
 import { SectionHeading } from "@/components/shared/section-heading";
-import { PageHeaderGlow } from "@/components/shared/page-header-glow";
 import { FeatureCategoryCard } from "@/components/features/feature-category-card";
 import { FEATURE_CATEGORIES } from "@/lib/constants/features";
 import { buildMetadata } from "@/lib/seo";
@@ -17,8 +16,7 @@ export const metadata: Metadata = buildMetadata({
 export default function FeaturesPage() {
   return (
     <>
-      <section className="relative isolate overflow-hidden py-16 sm:py-20">
-        <PageHeaderGlow />
+      <section className="py-16 sm:py-20">
         <Container>
           <SectionHeading
             as="h1"

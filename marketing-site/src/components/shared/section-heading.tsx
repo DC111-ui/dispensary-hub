@@ -34,11 +34,11 @@ function SectionHeading({
           {eyebrow}
         </span>
       ) : null}
-      <Heading className={cn("text-3xl font-semibold tracking-tight sm:text-4xl", titleClassName)}>
+      <Heading className={cn("text-headline font-semibold text-balance", titleClassName)}>
         {title}
       </Heading>
       {description ? (
-        <p className="text-muted-foreground max-w-2xl text-lg">{description}</p>
+        <p className="text-muted-foreground max-w-2xl text-lg leading-relaxed">{description}</p>
       ) : null}
     </div>
   );

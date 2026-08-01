@@ -10,16 +10,15 @@ function SiteFooter() {
   const copyrightRange = currentYear > 2024 ? `2024–${currentYear}` : "2024";
 
   return (
-    <footer className="border-border bg-secondary/40 border-t pb-20 md:pb-0">
-      <Container className="flex flex-col gap-8 py-12 sm:flex-row sm:items-start sm:justify-between">
-        <div className="flex flex-col gap-3">
-          <Link href="/" className="flex items-center gap-2 font-semibold">
+    <footer className="border-border/70 border-t pb-24 md:pb-0">
+      <Container className="flex max-w-7xl flex-col gap-10 py-16 sm:flex-row sm:items-start sm:justify-between sm:py-20">
+        <div className="flex max-w-sm flex-col gap-4">
+          <Link href="/" className="flex items-center gap-2.5">
             <BrandMark />
-            <span className="text-lg">LeafLedger</span>
+            <span className="text-[15px] font-semibold tracking-tight">LeafLedger</span>
           </Link>
-          <p className="text-muted-foreground max-w-sm text-sm">
-            One simple place to run your store: sales, stock, and paperwork,
-            all together.
+          <p className="text-muted-foreground text-sm leading-relaxed">
+            One simple place to run your store: sales, stock, and paperwork, all together.
           </p>
           <p className="text-muted-foreground text-sm">
             <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-foreground transition-colors">
@@ -30,7 +29,7 @@ function SiteFooter() {
           </p>
         </div>
 
-        <nav className="grid grid-cols-2 gap-x-8 gap-y-2 sm:flex sm:flex-col">
+        <nav className="grid grid-cols-2 gap-x-10 gap-y-3 sm:flex sm:flex-col sm:gap-y-2.5">
           {FOOTER_LINKS.map((link) => (
             <Link
               key={link.href}
@@ -42,7 +41,7 @@ function SiteFooter() {
           ))}
         </nav>
       </Container>
-      <Container className="border-border text-muted-foreground flex flex-col gap-2 border-t py-6 text-sm sm:flex-row sm:items-center sm:justify-between">
+      <Container className="border-border/70 text-muted-foreground flex max-w-7xl flex-col gap-2 border-t py-8 text-sm sm:flex-row sm:items-center sm:justify-between">
         <span>© {copyrightRange} LeafLedger. All rights reserved.</span>
         <a
           href="https://darlingtonchanakira.com"

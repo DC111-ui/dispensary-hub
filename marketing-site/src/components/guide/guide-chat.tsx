@@ -14,10 +14,10 @@ const DEMO_QUESTIONS = [
   "What happens during a compliance inspection?",
 ];
 
-const TYPE_MS = 32;
-const DELETE_MS = 18;
-const HOLD_MS = 1500;
-const GAP_MS = 400;
+const TYPE_MS = 55;
+const DELETE_MS = 30;
+const HOLD_MS = 2200;
+const GAP_MS = 500;
 
 function GuideChat() {
   const [value, setValue] = React.useState("");
@@ -89,9 +89,9 @@ function GuideChat() {
   }
 
   return (
-    <div className="border-border bg-card mx-auto mt-12 flex max-w-xl flex-col overflow-hidden rounded-2xl border shadow-xl">
-      <div className="border-border flex items-center gap-2.5 border-b px-5 py-3.5">
-        <span className="bg-primary text-primary-foreground flex size-7 items-center justify-center rounded-lg">
+    <div className="border-border/70 bg-card shadow-soft-lg mx-auto mt-12 flex max-w-xl flex-col overflow-hidden rounded-3xl border">
+      <div className="border-border/70 flex items-center gap-2.5 border-b px-5 py-4">
+        <span className="bg-foreground text-background flex size-7 items-center justify-center rounded-lg">
           <Sparkles className="size-3.5" />
         </span>
         <span className="text-sm font-semibold">LeafLedger Guide</span>
@@ -134,7 +134,7 @@ function GuideChat() {
             className={cn(
               "flex size-10 shrink-0 items-center justify-center rounded-md transition-colors",
               value.trim().length > 0
-                ? "bg-primary text-primary-foreground hover:bg-primary/90"
+                ? "bg-foreground text-background hover:bg-foreground/90"
                 : "bg-secondary text-secondary-foreground opacity-60"
             )}
           >

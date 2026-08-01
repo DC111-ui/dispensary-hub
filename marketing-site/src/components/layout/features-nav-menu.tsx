@@ -18,7 +18,9 @@ function FeaturesNavMenu() {
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Features</NavigationMenuTrigger>
+          <NavigationMenuTrigger className="text-muted-foreground hover:text-foreground focus:text-foreground data-[state=open]:text-foreground h-auto rounded-none bg-transparent p-0 text-sm font-medium tracking-tight hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent">
+            Features
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[560px] gap-1 p-2 sm:grid-cols-2">
               {FEATURE_CATEGORIES.map((category) => (

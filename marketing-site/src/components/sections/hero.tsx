@@ -1,91 +1,136 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
 
-import { Button } from "@/components/ui/button";
+import { LiquidButton } from "@/components/ui/liquid-glass-button";
 import { Container } from "@/components/shared/container";
-import { HeroAtmosphere } from "@/components/sections/hero-atmosphere";
-import { HeroTiles } from "@/components/sections/hero-tiles";
 import { useSafeReducedMotion } from "@/components/motion/use-safe-reduced-motion";
 
 const STAGGER_CONTAINER = {
   hidden: {},
-  show: { transition: { staggerChildren: 0.03, delayChildren: 0.01 } },
+  show: { transition: { staggerChildren: 0.06, delayChildren: 0.02 } },
 };
 
 const STAGGER_ITEM = {
-  hidden: { opacity: 0, y: 14 },
+  hidden: { opacity: 0, y: 16 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { type: "spring" as const, stiffness: 520, damping: 32, mass: 0.5 },
+    transition: { type: "spring" as const, stiffness: 420, damping: 34, mass: 0.6 },
   },
 };
 
+// The claim reads first; the consequence un-redacts a beat later, like a
+// line being uncovered on a record rather than just fading in with the rest
+// of the sentence.
+const REVEAL_DELAY = 0.55;
+const REVEAL_DURATION = 0.65;
+
+// The phone is the proof arriving after the claim: it settles in with a
+// touch of overshoot on the rotation, like something being set down for
+// inspection, then holds a slow, quiet float — alive, not idle.
+const SETTLE_DELAY = 0.5;
+const SETTLE_DURATION = 0.85;
+
 function Hero() {
   const reduce = useSafeReducedMotion();
+  const [settled, setSettled] = useState(false);
 
   return (
-    <section className="relative isolate overflow-hidden">
-      <HeroAtmosphere />
-
-      <Container className="relative flex flex-col py-20 lg:py-28">
+    <section className="relative flex min-h-[calc(100vh-5rem)] items-center overflow-hidden py-12">
+      <Container className="grid items-center gap-16 lg:grid-cols-[1.05fr_1fr] lg:gap-12">
         <motion.div
           initial={reduce ? "show" : "hidden"}
           animate="show"
           variants={STAGGER_CONTAINER}
-          className="flex max-w-3xl flex-col gap-6"
+          className="flex flex-col gap-7"
         >
-          <motion.h1 variants={STAGGER_ITEM} className="flex flex-col gap-1 tracking-tight">
-            <span className="text-muted-foreground [text-shadow:0_0_18px_var(--background),0_0_36px_var(--background)] text-2xl font-medium sm:text-3xl lg:text-4xl">
-              Run your club wrong, and
-            </span>
-            <span className="text-primary [text-shadow:0_0_18px_var(--background),0_0_36px_var(--background)] text-5xl leading-[0.98] font-semibold tracking-tight sm:text-6xl lg:text-7xl">
+          <motion.h1
+            variants={STAGGER_ITEM}
+            className="text-display text-balance font-semibold tracking-tight"
+          >
+            <span className="text-foreground">Run your club wrong, and </span>
+            <motion.span
+              initial={reduce ? false : { clipPath: "inset(0 100% 0 0)" }}
+              animate={{ clipPath: "inset(0 0% 0 0)" }}
+              transition={{
+                duration: REVEAL_DURATION,
+                delay: REVEAL_DELAY,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+              className="from-foreground/60 to-foreground/25 inline-block bg-gradient-to-r bg-clip-text text-transparent"
+            >
               SAPS can shut it down.
-            </span>
+            </motion.span>
           </motion.h1>
-          <motion.p variants={STAGGER_ITEM} className="text-muted-foreground max-w-xl text-lg">
-            Cannabis clubs run under real law, not a grey area. Fail an
-            inspection, and you could lose your stock, your license, or your
-            club. LeafLedger keeps every record ready.
+          <motion.p
+            variants={STAGGER_ITEM}
+            className="text-muted-foreground max-w-[42ch] text-lg leading-normal"
+          >
+            Cannabis clubs run under real law, not a grey area — LeafLedger
+            keeps every record ready to prove it.
           </motion.p>
-          <motion.div variants={STAGGER_ITEM} className="flex flex-col gap-3 sm:flex-row">
+          <motion.div variants={STAGGER_ITEM}>
             <Link href="/contact?plan=professional">
-              <Button
+              <LiquidButton
                 size="lg"
-                className="w-full transition-transform duration-200 ease-out hover:-translate-y-0.5 active:translate-y-0 sm:w-auto"
+                className="text-foreground border-border/60 shadow-soft flex w-full rounded-full border bg-background/50 px-8 transition-transform duration-200 ease-out hover:-translate-y-0.5 active:translate-y-0 sm:w-auto"
               >
                 Book a free demo
                 <ArrowRight className="size-4" />
-              </Button>
-            </Link>
-            <Link href="/features">
-              <Button
-                size="lg"
-                variant="outline"
-                className="w-full transition-transform duration-200 ease-out hover:-translate-y-0.5 active:translate-y-0 sm:w-auto"
-              >
-                See everything it does
-              </Button>
+              </LiquidButton>
             </Link>
           </motion.div>
           <motion.p variants={STAGGER_ITEM} className="text-muted-foreground text-sm">
             The demo is free. No cost, no obligation.
           </motion.p>
-          <motion.div variants={STAGGER_ITEM}>
-            <Link
-              href="/about"
-              className="text-muted-foreground hover:text-foreground inline-flex w-fit items-center gap-1 text-sm underline underline-offset-4"
-            >
-              New to cannabis clubs in South Africa? See how the law works
-              <ArrowRight className="size-3" />
-            </Link>
-          </motion.div>
         </motion.div>
 
-        <HeroTiles />
+        <div className="relative mx-auto w-full max-w-sm lg:max-w-none lg:self-start">
+          <motion.div
+            initial={
+              reduce
+                ? false
+                : { opacity: 0, y: 28, rotate: -8, scale: 0.92, filter: "blur(10px)" }
+            }
+            animate={{ opacity: 1, y: 0, rotate: -2, scale: 1, filter: "blur(0px)" }}
+            transition={
+              reduce
+                ? { duration: 0 }
+                : {
+                    delay: SETTLE_DELAY,
+                    duration: SETTLE_DURATION,
+                    ease: [0.16, 1, 0.3, 1],
+                    rotate: { type: "spring", stiffness: 120, damping: 12, delay: SETTLE_DELAY },
+                  }
+            }
+            onAnimationComplete={() => setSettled(true)}
+            className="relative mx-auto aspect-[934/1408] w-full max-w-[15.36rem] lg:max-w-[19.2rem]"
+          >
+            <motion.div
+              animate={settled && !reduce ? { y: [0, -8, 0] } : { y: 0 }}
+              transition={
+                settled && !reduce
+                  ? { duration: 6, repeat: Infinity, ease: "easeInOut" }
+                  : { duration: 0 }
+              }
+              className="relative size-full"
+            >
+              <Image
+                src="/images/hero-phone-v2.webp"
+                alt="LeafLedger point-of-sale checkout screen, shown on a smartphone"
+                fill
+                priority
+                sizes="(min-width: 1024px) 34vw, 80vw"
+                className="object-contain drop-shadow-[0_30px_50px_rgba(0,0,0,0.18)]"
+              />
+            </motion.div>
+          </motion.div>
+        </div>
       </Container>
     </section>
   );

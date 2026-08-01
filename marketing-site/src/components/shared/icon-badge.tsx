@@ -9,10 +9,10 @@ type IconTone = "rust" | "chartreuse" | "green" | "teal";
 // pastel-filled background — the badge itself stays ink-on-paper, like a
 // stamped record, and the dot is the only per-category color signal.
 const TONE_DOT_CLASSES: Record<IconTone, string> = {
-  rust: "bg-[oklch(0.55_0.15_35)]",
+  rust: "bg-rust",
   chartreuse: "bg-gold",
   green: "bg-primary",
-  teal: "bg-[oklch(0.58_0.09_210)]",
+  teal: "bg-teal",
 };
 
 function IconBadge({

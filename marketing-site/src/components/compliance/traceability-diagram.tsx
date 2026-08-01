@@ -10,29 +10,42 @@ import {
 
 import { cn } from "@/lib/utils";
 
+// Tone carries the chain's own logic: teal marks the two points where
+// custody crosses outside the store (a verified supplier, a known
+// customer); gold marks the paper record (the invoice); rust marks the
+// active, in-store transaction (the sale). Held stock, with nothing
+// happening to it yet, stays ink-neutral.
 const CHAIN = [
-  { icon: Truck, label: "Supplier", description: "Verified supplier record" },
-  { icon: FileText, label: "Purchase", description: "Purchase order & invoice" },
-  { icon: Warehouse, label: "Store", description: "Delivered and added to your stock" },
-  { icon: ShoppingCart, label: "Sale", description: "Recorded as a sale" },
-  { icon: User, label: "Customer", description: "Added to their profile" },
+  { icon: Truck, label: "Supplier", description: "Verified supplier record", tone: "teal" as const },
+  { icon: FileText, label: "Purchase", description: "Purchase order & invoice", tone: "gold" as const },
+  { icon: Warehouse, label: "Store", description: "Delivered and added to your stock", tone: "neutral" as const },
+  { icon: ShoppingCart, label: "Sale", description: "Recorded as a sale", tone: "rust" as const },
+  { icon: User, label: "Customer", description: "Added to their profile", tone: "teal" as const },
 ];
+
+const TONE_CLASSES = {
+  teal: "bg-teal text-teal-foreground",
+  gold: "bg-gold text-gold-foreground",
+  rust: "bg-rust text-rust-foreground",
+  neutral: "bg-accent text-accent-foreground",
+};
 
 function TraceabilityDiagram({ compact = false }: { compact?: boolean }) {
   return (
     <div
       className={cn(
-        "border-border bg-card rounded-2xl border shadow-sm",
-        compact ? "p-4 sm:p-6" : "p-6 sm:p-10"
+        "border-border/60 bg-card shadow-soft rounded-3xl border",
+        compact ? "p-6 sm:p-8" : "p-6 sm:p-10"
       )}
     >
       <div className="flex flex-col items-stretch gap-2 sm:flex-row sm:items-center sm:gap-0">
-        {CHAIN.map(({ icon: Icon, label, description }, index) => (
+        {CHAIN.map(({ icon: Icon, label, description, tone }, index) => (
           <div key={label} className="flex flex-1 flex-col items-center sm:flex-row">
             <div className="flex flex-1 flex-col items-center gap-2 text-center">
               <span
                 className={cn(
-                  "bg-accent text-accent-foreground flex items-center justify-center rounded-full",
+                  "flex items-center justify-center rounded-full",
+                  TONE_CLASSES[tone],
                   compact ? "size-10" : "size-14"
                 )}
               >

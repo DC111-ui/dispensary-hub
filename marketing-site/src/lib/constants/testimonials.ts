@@ -11,38 +11,33 @@ export type ClubLogo = {
 };
 
 /**
- * PLACEHOLDER DATA.
- *
- * LeafLedger has real pilot/beta clubs running the product today, but their
- * quotes, names, and logos are not yet collected in this codebase. Do not
- * ship this file as-is: replace every entry below with a real quote and a
- * real club name, with that club's explicit consent to be named publicly,
- * before the Social Proof section goes live.
+ * PLACEHOLDER DATA — deliberately written to read as an obvious placeholder
+ * on the live site (not a fabricated quote), since no real pilot-club
+ * testimonials exist yet. Replace every entry with a real quote, with that
+ * person's explicit consent to be named publicly, as soon as one exists —
+ * and drop the "Placeholder · not live copy" caption at that point too.
  */
 export const PLACEHOLDER_TESTIMONIALS: Testimonial[] = [
   {
     quote:
-      "Replace with a real quote from a pilot club, ideally about a specific moment: an inspection that went smoothly, a stocktake that used to take a day and now doesn't, etc.",
-    authorName: "Pilot club owner name",
-    authorRole: "Owner",
-    clubName: "Pilot club name",
-    clubLocality: "City, South Africa",
+      "Placeholder quote — replace before launch. This space will show a real quote from a pilot club owner once we have one to publish.",
+    authorName: "Pilot Club Owner",
+    authorRole: "Placeholder",
+    clubName: "not live copy",
   },
   {
     quote:
-      "Replace with a second real quote, from a different role (e.g. a compliance officer or manager) to show LeafLedger works for more than one kind of user.",
-    authorName: "Pilot club staff name",
-    authorRole: "Compliance Officer",
-    clubName: "Pilot club name",
-    clubLocality: "City, South Africa",
+      "Placeholder quote — replace before launch. This space will show a real quote from a pilot club staff member once we have one to publish.",
+    authorName: "Pilot Club Staff Member",
+    authorRole: "Placeholder",
+    clubName: "not live copy",
   },
   {
     quote:
-      "Replace with a third real quote, ideally from a multi-store or growing club to support the 'grows with you' positioning.",
-    authorName: "Second pilot club owner name",
-    authorRole: "Owner",
-    clubName: "Second pilot club name",
-    clubLocality: "City, South Africa",
+      "Placeholder quote — replace before launch. This space will show a real quote from a second pilot club once we have one to publish.",
+    authorName: "Second Pilot Club Owner",
+    authorRole: "Placeholder",
+    clubName: "not live copy",
   },
 ];
 

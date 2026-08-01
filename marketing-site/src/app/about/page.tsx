@@ -4,9 +4,12 @@ import { ArrowRight, Check, Landmark, Scale, ExternalLink } from "lucide-react";
 
 import { Container } from "@/components/shared/container";
 import { SectionHeading } from "@/components/shared/section-heading";
-import { Button } from "@/components/ui/button";
+import { LiquidButton } from "@/components/ui/liquid-glass-button";
+import { cn } from "@/lib/utils";
 import { buildMetadata } from "@/lib/seo";
 
+// Same tone roles as the compliance page's chain-of-custody diagram: teal
+// for a verified/judicial authority, gold for the official paper record.
 const SOURCES = [
   {
     icon: Scale,
@@ -16,6 +19,7 @@ const SOURCES = [
     note: "Constitutional Court of South Africa. Unanimous judgment.",
     href: "https://www.saflii.org/za/cases/ZACC/2018/30.html",
     linkLabel: "Read the full judgment on SAFLII",
+    tone: "teal" as const,
   },
   {
     icon: Landmark,
@@ -24,8 +28,14 @@ const SOURCES = [
     note: "Signed into law by the President on 28 May 2024.",
     href: "https://www.parliament.gov.za/storage/app/media/Acts/2024/Act_7_of_2024_Cannabis_for_Private_Purposes_Act.pdf",
     linkLabel: "Read the full Act (Parliament of South Africa)",
+    tone: "gold" as const,
   },
 ];
+
+const TONE_CLASSES = {
+  teal: "bg-teal text-teal-foreground",
+  gold: "bg-gold text-gold-foreground",
+};
 
 export const metadata: Metadata = buildMetadata({
   title: "About",
@@ -45,13 +55,12 @@ const CLUB_CHECKLIST = [
 export default function AboutPage() {
   return (
     <>
-      <section className="bg-page-tint py-16 sm:py-20">
+      <section className="py-16 sm:py-20">
         <Container>
           <SectionHeading
             as="h1"
             eyebrow="Our story"
             title="Why we built LeafLedger"
-            titleClassName="text-4xl sm:text-5xl font-bold"
             description="A short history of how cannabis retail in South Africa got here, and how we help stores and clubs run responsibly within it."
             className="max-w-2xl"
           />
@@ -60,7 +69,7 @@ export default function AboutPage() {
 
       <section className="pb-16 sm:pb-20">
         <Container className="flex flex-col gap-6">
-          <h2 className="text-2xl font-semibold tracking-tight">How South Africa got here</h2>
+          <h2 className="text-title font-semibold">How South Africa got here</h2>
           <div className="text-muted-foreground flex flex-col gap-4 text-base leading-7">
             <p>
               On 18 September 2018, the Constitutional Court of South Africa
@@ -96,11 +105,18 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="border-border bg-card mt-2 flex flex-col gap-4 rounded-2xl border p-6">
+          <div className="border-border/70 bg-card mt-2 flex flex-col gap-4 rounded-3xl border p-8">
             <p className="text-sm font-semibold">Primary sources</p>
             {SOURCES.map((source) => (
               <div key={source.href} className="flex gap-3">
-                <source.icon className="text-primary mt-0.5 size-5 shrink-0" />
+                <span
+                  className={cn(
+                    "flex size-9 shrink-0 items-center justify-center rounded-full",
+                    TONE_CLASSES[source.tone]
+                  )}
+                >
+                  <source.icon className="size-4.5" />
+                </span>
                 <div className="flex flex-col gap-1">
                   <p className="text-sm font-medium leading-snug">{source.title}</p>
                   <p className="text-muted-foreground text-xs">
@@ -122,7 +138,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="bg-secondary/30 py-16 sm:py-20">
+      <section className="pb-16 sm:pb-20">
         <Container className="flex flex-col gap-8">
           <SectionHeading
             eyebrow="Staying on the right side of the law"
@@ -131,8 +147,11 @@ export default function AboutPage() {
           />
           <ul className="grid gap-4 sm:grid-cols-2">
             {CLUB_CHECKLIST.map((item) => (
-              <li key={item} className="flex items-start gap-3 text-sm">
-                <Check className="text-primary mt-0.5 size-4 shrink-0" />
+              <li
+                key={item}
+                className="border-border/70 bg-card flex items-start gap-3 rounded-2xl border p-5 text-sm"
+              >
+                <Check className="text-foreground mt-0.5 size-4 shrink-0" />
                 <span>{item}</span>
               </li>
             ))}
@@ -146,9 +165,9 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="py-16 sm:py-20">
+      <section className="pb-16 sm:pb-20">
         <Container className="flex flex-col gap-6">
-          <h2 className="text-2xl font-semibold tracking-tight">About LeafLedger</h2>
+          <h2 className="text-title font-semibold">About LeafLedger</h2>
           <div className="text-muted-foreground flex flex-col gap-4 text-base leading-7">
             <p>
               We&apos;re a software development company, started in 2024. We
@@ -168,14 +187,17 @@ export default function AboutPage() {
 
       <section className="pb-16 sm:pb-20">
         <Container className="flex flex-col items-center gap-6 text-center">
-          <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+          <h2 className="text-headline font-semibold text-balance">
             See LeafLedger for yourself
           </h2>
           <Link href="/contact">
-            <Button size="lg">
+            <LiquidButton
+              size="lg"
+              className="text-foreground border-border/60 shadow-soft rounded-full border bg-background/50 px-8 transition-transform duration-200 ease-out hover:-translate-y-0.5 active:translate-y-0"
+            >
               Book a free demo
               <ArrowRight className="size-4" />
-            </Button>
+            </LiquidButton>
           </Link>
           <p className="text-muted-foreground text-sm">No cost, no obligation.</p>
         </Container>

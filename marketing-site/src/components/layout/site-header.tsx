@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ChevronRight, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/shared/container";
@@ -16,14 +16,14 @@ import {
 
 function SiteHeader() {
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-transparent bg-transparent">
-      <Container className="flex h-16 max-w-7xl items-center gap-8">
-        <Link href="/" className="mr-4 flex shrink-0 items-center gap-2 font-semibold">
+    <header className="bg-background/80 sticky top-0 z-40 w-full backdrop-blur-sm">
+      <Container className="flex h-20 max-w-7xl items-center gap-10">
+        <Link href="/" className="flex shrink-0 items-center gap-2.5">
           <BrandMark />
-          <span className="text-lg">LeafLedger</span>
+          <span className="text-[15px] font-semibold tracking-tight">LeafLedger</span>
         </Link>
 
-        <nav className="hidden items-center gap-1 md:flex">
+        <nav className="hidden flex-1 items-center justify-center gap-8 md:flex">
           {NAV_LINKS.map((link) =>
             link.href === "/features" ? (
               <FeaturesNavMenu key={link.href} />
@@ -31,33 +31,35 @@ function SiteHeader() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="hover:bg-accent hover:text-accent-foreground rounded-md px-4 py-2 text-sm font-medium transition-colors"
+                className="text-muted-foreground hover:text-foreground text-sm font-medium tracking-tight transition-colors"
               >
                 {link.label}
               </Link>
             )
           )}
-          <span className="bg-border mx-2 h-5 w-px" aria-hidden="true" />
           <Link
             href={NAV_GUIDE_CTA.href}
-            className="text-foreground hover:bg-accent hover:text-accent-foreground inline-flex items-center gap-1.5 rounded-md px-4 py-2 text-sm font-medium transition-colors"
+            className="text-muted-foreground hover:text-foreground inline-flex items-center gap-1.5 text-sm font-medium tracking-tight transition-colors"
           >
-            <Sparkles className="text-primary size-4" />
+            <Sparkles className="text-brand size-3.5" />
             {NAV_GUIDE_CTA.label}
           </Link>
         </nav>
 
-        <div className="ml-auto flex items-center gap-3">
+        <div className="ml-auto flex items-center gap-4">
           <ThemeToggle />
-          <Link href={NAV_SIGN_IN.href} className="hidden md:block">
-            <Button variant="secondary" className="rounded-full">
-              {NAV_SIGN_IN.label}
-            </Button>
+          <Link
+            href={NAV_SIGN_IN.href}
+            className="text-foreground hover:text-muted-foreground hidden text-sm font-medium tracking-tight transition-colors md:block"
+          >
+            {NAV_SIGN_IN.label}
           </Link>
           <Link href={NAV_CONTACT_SALES.href} className="hidden md:block">
-            <Button className="rounded-full">
+            <Button
+              variant="outline"
+              className="border-foreground/70 text-foreground hover:bg-foreground/5 rounded-full px-5"
+            >
               {NAV_CONTACT_SALES.label}
-              <ChevronRight className="size-4" />
             </Button>
           </Link>
           <MobileNav />

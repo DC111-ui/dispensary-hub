@@ -40,3 +40,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# design working files (reference screenshots, image-gen prompts)
+/design/
+
+# local tool state / scratch output
+/.impeccable/
+/.playwright-mcp/

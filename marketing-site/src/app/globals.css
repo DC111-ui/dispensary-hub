@@ -4,56 +4,72 @@
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 :root {
-  --radius: 0.4rem;
-  --background: oklch(0.98 0.011 87);
-  --foreground: oklch(0.24 0.03 258);
-  --card: oklch(0.995 0.006 87);
-  --card-foreground: oklch(0.24 0.03 258);
-  --popover: oklch(0.995 0.006 87);
-  --popover-foreground: oklch(0.24 0.03 258);
-  /* Stripe's blurple (#635BFF), not our own green — the one deliberate
-     borrow, per direction: keep the ledger/paper system, replace the
-     primary action color so it stops reading as "another cannabis-green
-     SaaS" next to every competitor's default green. */
-  --primary: oklch(0.57 0.25 276);
-  --primary-foreground: oklch(0.98 0.012 276);
-  --secondary: oklch(0.94 0.012 87);
-  --secondary-foreground: oklch(0.26 0.03 258);
-  --muted: oklch(0.94 0.012 87);
-  --muted-foreground: oklch(0.5 0.02 258);
-  --accent: oklch(0.93 0.035 276);
-  --accent-foreground: oklch(0.3 0.08 276);
+  /* Premium neutral base: near-white background, near-black text, a tight
+     low-chroma gray scale for cards/borders. Primary actions are near-black
+     (not a saturated hue) — the neutral palette itself is the accent. */
+  --radius: 0.75rem;
+  --background: oklch(0.985 0.002 260);
+  --foreground: oklch(0.16 0.004 260);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.16 0.004 260);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.16 0.004 260);
+  --primary: oklch(0.18 0.005 260);
+  --primary-foreground: oklch(0.99 0.001 260);
+  --secondary: oklch(0.96 0.003 260);
+  --secondary-foreground: oklch(0.22 0.004 260);
+  --muted: oklch(0.96 0.003 260);
+  --muted-foreground: oklch(0.5 0.006 260);
+  --accent: oklch(0.95 0.004 260);
+  --accent-foreground: oklch(0.2 0.006 260);
   --gold: oklch(0.76 0.13 83);
   --gold-foreground: oklch(0.28 0.05 83);
+  /* Rust and teal — the two other tones IconBadge already committed to as
+     inline arbitrary values; promoted to real tokens so any component can
+     reuse the same confirmed record/stamp accent vocabulary. */
+  --rust: oklch(0.55 0.15 35);
+  --rust-foreground: oklch(0.98 0.01 35);
+  --teal: oklch(0.58 0.09 210);
+  --teal-foreground: oklch(0.98 0.01 210);
+  /* Brand purple — decoupled from --primary so it can stay reserved for the
+     logo mark only, independent of the neutral primary-action palette. */
+  --brand: oklch(0.57 0.25 276);
+  --brand-foreground: oklch(0.98 0.012 276);
   --destructive: oklch(0.5 0.16 25);
   --destructive-foreground: oklch(0.98 0.01 25);
-  --border: oklch(0.88 0.014 87);
-  --input: oklch(0.88 0.014 87);
-  --ring: oklch(0.57 0.25 276);
+  --border: oklch(0.9 0.004 260);
+  --input: oklch(0.9 0.004 260);
+  --ring: oklch(0.18 0.005 260);
 }
 
 [data-theme="dark"] {
-  --background: oklch(0.19 0.024 258);
-  --foreground: oklch(0.95 0.012 87);
-  --card: oklch(0.23 0.026 258);
-  --card-foreground: oklch(0.95 0.012 87);
-  --popover: oklch(0.23 0.026 258);
-  --popover-foreground: oklch(0.95 0.012 87);
-  --primary: oklch(0.72 0.19 276);
-  --primary-foreground: oklch(0.16 0.03 276);
-  --secondary: oklch(0.28 0.024 258);
-  --secondary-foreground: oklch(0.95 0.012 87);
-  --muted: oklch(0.28 0.024 258);
-  --muted-foreground: oklch(0.68 0.018 87);
-  --accent: oklch(0.32 0.07 276);
-  --accent-foreground: oklch(0.9 0.05 276);
+  --background: oklch(0.15 0.005 260);
+  --foreground: oklch(0.96 0.003 260);
+  --card: oklch(0.19 0.006 260);
+  --card-foreground: oklch(0.96 0.003 260);
+  --popover: oklch(0.19 0.006 260);
+  --popover-foreground: oklch(0.96 0.003 260);
+  --primary: oklch(0.92 0.003 260);
+  --primary-foreground: oklch(0.15 0.005 260);
+  --secondary: oklch(0.24 0.006 260);
+  --secondary-foreground: oklch(0.96 0.003 260);
+  --muted: oklch(0.24 0.006 260);
+  --muted-foreground: oklch(0.66 0.008 260);
+  --accent: oklch(0.28 0.006 260);
+  --accent-foreground: oklch(0.94 0.004 260);
   --gold: oklch(0.78 0.12 83);
   --gold-foreground: oklch(0.22 0.04 83);
+  --rust: oklch(0.66 0.16 35);
+  --rust-foreground: oklch(0.18 0.03 35);
+  --teal: oklch(0.68 0.1 210);
+  --teal-foreground: oklch(0.16 0.02 210);
+  --brand: oklch(0.72 0.19 276);
+  --brand-foreground: oklch(0.16 0.03 276);
   --destructive: oklch(0.62 0.17 25);
   --destructive-foreground: oklch(0.16 0.02 25);
-  --border: oklch(1 0 0 / 12%);
-  --input: oklch(1 0 0 / 18%);
-  --ring: oklch(0.72 0.19 276);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: oklch(0.92 0.003 260);
 }
 
 @theme inline {
@@ -78,12 +94,18 @@
   --color-ring: var(--ring);
   --color-gold: var(--gold);
   --color-gold-foreground: var(--gold-foreground);
+  --color-rust: var(--rust);
+  --color-rust-foreground: var(--rust-foreground);
+  --color-teal: var(--teal);
+  --color-teal-foreground: var(--teal-foreground);
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --radius-xl: calc(var(--radius) + 8px);
+  --radius-2xl: calc(var(--radius) + 16px);
   --font-sans: var(--font-public-sans);
-  --font-display: var(--font-fraunces);
 }
 
 @layer base {
@@ -94,11 +116,63 @@
     @apply bg-background text-foreground;
     transition: background-color 0.15s ease, color 0.15s ease;
   }
-  h1,
-  h2,
-  h3,
-  h4 {
-    font-family: var(--font-display);
+
+  /* Premium type scale: one confident display size for the hero, a clear
+     step-down for section headings, tight tracking throughout, generous
+     body line-height. Fluid via clamp() so nothing feels cramped on
+     mobile or oversized on ultra-wide. */
+  h1, h2, h3, h4 {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+  p {
+    line-height: 1.65;
+  }
+}
+
+@layer utilities {
+  /* Hero / page-level display headline. */
+  .text-display {
+    font-size: clamp(2.75rem, 2rem + 3vw, 5.5rem);
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+  }
+  /* Major section headings. */
+  .text-headline {
+    font-size: clamp(2rem, 1.65rem + 1.5vw, 3rem);
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+  }
+  /* Sub-headings / spotlight titles. */
+  .text-title {
+    font-size: clamp(1.375rem, 1.2rem + 0.7vw, 1.75rem);
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+  }
+
+  /* Soft, large-blur, low-opacity shadows for a "floating" premium feel —
+     used instead of hard drop shadows on cards, images and device frames. */
+  .shadow-soft {
+    box-shadow:
+      0 1px 2px -1px oklch(0.16 0.004 260 / 6%),
+      0 12px 32px -12px oklch(0.16 0.004 260 / 12%);
+  }
+  .shadow-soft-lg {
+    box-shadow:
+      0 2px 4px -2px oklch(0.16 0.004 260 / 6%),
+      0 24px 60px -20px oklch(0.16 0.004 260 / 16%);
+  }
+  [data-theme="dark"] .shadow-soft {
+    box-shadow:
+      0 1px 2px -1px oklch(0 0 0 / 30%),
+      0 12px 32px -12px oklch(0 0 0 / 45%);
+  }
+  [data-theme="dark"] .shadow-soft-lg {
+    box-shadow:
+      0 2px 4px -2px oklch(0 0 0 / 30%),
+      0 24px 60px -20px oklch(0 0 0 / 55%);
   }
 }
 
@@ -126,70 +200,6 @@
 
 .animate-accordion-up {
   animation: accordion-up 0.2s ease-out;
-}
-
-/* Hero background band: a short, full-width strip pinned to the very top on
-   mobile (clears the body copy below it), widening into the original tall
-   top-right band — tucked behind the nav strip and the HeroTiles panel — at
-   `lg` and above. See hero-atmosphere.tsx for why this needs a real shape
-   change per breakpoint rather than a scaled clamp. */
-.hero-atmosphere-shape {
-  position: absolute;
-  inset-inline: 0;
-  top: -8%;
-  height: 38%;
-  -webkit-mask-image: radial-gradient(ellipse 130% 100% at 50% 0%, black 0%, rgba(0, 0, 0, 0.75) 45%, transparent 82%);
-  mask-image: radial-gradient(ellipse 130% 100% at 50% 0%, black 0%, rgba(0, 0, 0, 0.75) 45%, transparent 82%);
-}
-
-@media (min-width: 1024px) {
-  .hero-atmosphere-shape {
-    inset-inline: auto;
-    right: 0;
-    top: -35%;
-    height: 165%;
-    width: 70%;
-    -webkit-mask-image: radial-gradient(ellipse 85% 80% at 66% 4%, black 0%, rgba(0, 0, 0, 0.85) 42%, transparent 80%);
-    mask-image: radial-gradient(ellipse 85% 80% at 66% 4%, black 0%, rgba(0, 0, 0, 0.85) 42%, transparent 80%);
-  }
-}
-
-.bg-brand-wash {
-  background: linear-gradient(
-    120deg,
-    hsl(258 30% 88%) 0%,
-    hsl(246 32% 87%) 45%,
-    hsl(276 38% 85%) 75%,
-    hsl(83 40% 84%) 100%
-  );
-}
-[data-theme="dark"] .bg-brand-wash {
-  background: linear-gradient(
-    120deg,
-    hsl(258 28% 22%) 0%,
-    hsl(246 30% 22%) 45%,
-    hsl(276 34% 23%) 75%,
-    hsl(83 30% 22%) 100%
-  );
-}
-
-.bg-brand-glow {
-  background: linear-gradient(
-    120deg,
-    hsl(258 45% 55%) 0%,
-    hsl(246 48% 56%) 45%,
-    hsl(276 60% 60%) 75%,
-    hsl(83 55% 55%) 100%
-  );
-}
-[data-theme="dark"] .bg-brand-glow {
-  background: linear-gradient(
-    120deg,
-    hsl(258 40% 40%) 0%,
-    hsl(246 42% 42%) 45%,
-    hsl(276 50% 46%) 75%,
-    hsl(83 45% 42%) 100%
-  );
 }
 
 /* Pale, cool-tinted page background used on "product marketing" style
@@ -229,6 +239,26 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .brand-ribbon {
-    animation: ribbon-slide 11s ease-in-out infinite;
+    animation: ribbon-slide 6s ease-in-out infinite;
+  }
+}
+
+/* Left-to-right shine sweep for LiquidButton — a light streak passing
+   across the glass surface, looping. Purely transform + opacity, no
+   layout cost. */
+@keyframes shine-sweep {
+  0%,
+  15% {
+    transform: translateX(-130%);
+  }
+  55%,
+  100% {
+    transform: translateX(230%);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .animate-shine-sweep {
+    animation: shine-sweep 5.5s ease-in-out infinite;
   }
 }
